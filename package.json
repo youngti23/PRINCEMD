@@ -7,8 +7,7 @@
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
-    "@bochilteam/scraper-savefrom": "^5.0.0",
-    "@bochilteam/scraper": "^5.0.1",
+    "@bochilteam/scraper-sosmed": "^1.0.5",
     "@bochilteam/scraper-youtube": "^5.0.0",
     "@brandond/findthelyrics": "^2.0.5",
     "@green-code/music-track-data": "^2.0.3",
