@@ -93,21 +93,30 @@
     "eslint": "^8.45.0",
     "eslint-config-google": "^0.14.0"
   },
+  
+  "overrides": {
+"cache-manager": "5.2.2"
+  },
+  
   "directories": {
     "lib": "lib",
     "src": "src",
     "plugins": "plugins"
   },
+  
   "engines": {
     "node": ">=22.11.0"
   },
+  
   "homepage": "https://github.com/PRINCE-GDS/prince-ds",
   "main": "index.js",
   "name": "prince-ds",
+  
   "optionalDependencies": {
     "@xct007/frieren-scraper": "*",
     "cheerio": "npm:cheerio@1.0.0-rc.12"
   },
+  
   "scripts": {
     "start": "node index.js",
     "code": "node index.js code",
