@@ -24,6 +24,7 @@
     "cfonts": "^3.2.0",
     "chess.js": "*",
     "chalk": "^5.1.0",
+    "youtube-dl-exec": "^3.0.10",
     "cheerio": "npm:cheerio@1.0.0-rc.12",
     "colors": "^1.4.0",
     "countries-and-timezones": "^3.6.0",
