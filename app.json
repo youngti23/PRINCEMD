@@ -50,7 +50,7 @@
       "required": false,
       "value": "false"
       },
-    "STATUS_MESSAGE": {
+    "STATUS_MSG": {
       "description": "Status reply message",
       "required": false,
       "value": "Your Status has been seen by Prince bot"
