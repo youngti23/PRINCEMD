@@ -1,14 +1,13 @@
 {
   "author": {
-    "name": "ds427"
+    "name": "ds786"
   },
   "bugs": {
     "url": "https://github.com/PRINCE-GDS/prince-ds/issues"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
-    "@bochilteam/scraper-sosmed": "^1.0.5",
-    "@bochilteam/scraper-youtube": "^5.0.0",
+    "@bochilteam/scraper-sosmed": "^1.0.5"
     "@brandond/findthelyrics": "^2.0.5",
     "@green-code/music-track-data": "^2.0.3",
     "@shineiichijo/marika": "^2.0.6",
@@ -86,16 +85,11 @@
     "xfarr-api": "^1.0.3",
     "yargs": "^17.3.1",
     "yt-search": "^2.12.1",
-    "youtube-search": "^1.1.6",
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
     "eslint": "^8.45.0",
     "eslint-config-google": "^0.14.0"
-  },
-  
-  "overrides": {
-"cache-manager": "5.2.2"
   },
   
   "directories": {
@@ -105,7 +99,7 @@
   },
   
   "engines": {
-    "node": ">=22.11.0"
+    "node": ">=20.0.0"
   },
   
   "homepage": "https://github.com/PRINCE-GDS/prince-ds",
