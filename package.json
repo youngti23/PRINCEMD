@@ -3,8 +3,8 @@
     "name": "ds786"
   },
   "bugs": {
-    "url": "https://github.com/PRINCE-GDS/prince-ds/issues"
-    "license": "GPL-3.0-or-later",
+    "url": "https://github.com/PRINCE-GDS/prince-ds/issues",
+    "license": "GPL-3.0-or-later"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
