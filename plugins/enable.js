@@ -153,6 +153,110 @@ break
 
 
 		  
+		  case 'antilink2': case 'antienlace2':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiLink2 = isEnable 
+break
+
+		  
+case 'antitiktok': case 'antitk': case 'antitik':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTiktok = isEnable 
+break
+
+		  
+case 'antiyoutube': case 'antiyt':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiYoutube = isEnable 
+break
+
+		  
+case 'antitelegram': case 'antitl': case 'antitele': case 'antitg': case 'antitel':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTelegram = isEnable 
+break
+
+		  
+case 'antifacebook': case 'antifb': case 'antifbook':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiFacebook = isEnable 
+break
+
+
+		  
+case 'antiinstagram': case 'antinstagram': case 'antiig': case 'antig': case 'antiinsta': case 'antinsta':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiInstagram = isEnable 
+break
+
+
+		  
+case 'antitwitter': case 'antitw': case 'antitwit': case 'antitwter': case 'antitwiter': case 'antix':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTwitter = isEnable 
+break
+
+
+		  
+case 'antidiscord':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiDiscord = isEnable 
+break
+
+
+		  
+case 'antithreads':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiThreads = isEnable 
+break
+		  
+
+case 'antitwitch':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTwitch = isEnable 
+break
+
+		  
       case 'antibotclone':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -189,6 +293,17 @@ break
         }
       }
       chat.chatbot = isEnable
+      break
+
+    case 'princechat':
+	case 'princegpt':	  
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.princechat = isEnable
       break
 
 		  
@@ -257,31 +372,88 @@ break
 		  
     default:
      if (!/[01]/.test(command)) return m.reply(`
-╭━⊱⊱⊱『 *🪩ᴏɴ/ᴏғғ ᴍᴇɴᴜ🪩* 』⊱⊱⊱━╮
+╭━⊱⊱⊱『 *Bot settings* 』⊱⊱⊱━
+     bot on off features
+     
+╭━━━━⊱『 *Ownercmd*』⊱━━━━
+│⛊ ${usedPrefix}pmblocker
+Auto inbox blocker 
 
-╭━━━━⊱『 *ᴏᴡɴᴇʀ*』⊱━━━━╮
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴘᴍʙʟᴏᴄᴋᴇʀ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴏɴʟʏᴅᴍ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ɢʀᴏᴜᴘᴏɴʟʏ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀᴜᴛᴏᴛʏᴘᴇ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀᴜᴛᴏʙɪᴏ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀɴᴛɪʙᴏᴛᴄʟᴏɴᴇ
-╰━━━━━━━━━━━━━━━╯
-╭━━━━⊱『 *Aᴅᴍɪɴ*』⊱━━━━╮
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴡᴇʟᴄᴏᴍᴇ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀɴᴛɪʟɪɴᴋ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀᴜᴛᴏsᴛɪᴄᴋᴇʀ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴅᴇᴛᴇᴄᴛ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴊᴀʀᴠɪs
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀɴᴛɪsᴘᴀᴍ
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴀɴᴛɪᴛᴏxɪᴄ
-╰━━━━━━━━━━━━━━╯
-╭━━━━⊱『 *ᴜsᴇʀs*』⊱━━━━╮
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ ᴄʜᴀᴛʙᴏᴛ 
-╰━━━━━━━━━━━━━━╯
+│⛊ ${usedPrefix}onlydm
+bot will only work in inbox
+
+│⛊ ${usedPrefix}onlyg
+bot will only work in group
+
+│⛊ ${usedPrefix}autotype
+bot will show auto typing on chats
+
+│⛊ ${usedPrefix}ᴏɴ/ᴏғғ autobio
+bot auto bio 
+
+│⛊ ${usedPrefix}antibotclone
+jadibot will be left if main bot in the same gp
+
+╰━━━━━━━━━━━━━━━
+
+
+╭━━━━⊱『 *Admin cmd*』⊱━━━━
+│⛊ ${usedPrefix}welcome
+bot will welcome and goodbye new joiners and lefters
+
+│⛊ ${usedPrefix}autosticker
+bot will create auto sticker if someone will send img/short video
+
+│⛊ ${usedPrefix}detect
+not added yet
+
+│⛊ ${usedPrefix}jarvis
+voice chatbot
+
+│⛊ ${usedPrefix}antispam
+bot will detect spammers 
+
+│⛊ ${usedPrefix}antilinkAll
+bot will detect all links
+
+│⛊ ${usedPrefix}antitoxic
+bot will detect bad words
+
+│⛊ ${usedPrefix}antiTiktok
+bot will detect tiktok links 
+
+│⛊ ${usedPrefix}antiYoutube
+bot will detect youtube links
+
+│⛊ ${usedPrefix}antiTelegram
+bot will detect telegram links
+
+│⛊ ${usedPrefix}antiFacebook
+bot will detect facebook links
+
+│⛊ ${usedPrefix}antiInstagram
+bot will detect Instagram link
+
+│⛊ ${usedPrefix}antiTwitter 
+bot will detect twitter links 
+
+
+bot will detect and remove these all whoever will violate it
+╰━━━━━━━━━━━━━━
+
+
+╭━━━━⊱『 *User cmd*』⊱━━━━
+│⛊ ${usedPrefix}chatbot
+bot will start chating 
+
+│⛊ ${usedPrefix}princechat or princegpt
+Princebot advance chatbot you can ask anything
+
+╰━━━━━━━━━━━━━━
 *🔻Exᴀᴍᴘʟᴇ🔻 :*
-*${usedPrefix}ᴏɴ* ᴡᴇʟᴄᴏᴍᴇ
-*${usedPrefix}ᴏғғ* ᴡᴇʟᴄᴏᴍᴇ
+example message you can trun on, off like this
+*${usedPrefix}on* welcome
+*${usedPrefix}off* welcome
 `)
       throw false
   }
