@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
 
 handler.help = ['unbanuser'];
 handler.tags = ['owner'];
-handler.command = /^unbanuser$/i;
+handler.command = /^unbanuser|unban$/i;
 
 handler.rowner = true;
 export default handler;
