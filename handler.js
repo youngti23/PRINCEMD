@@ -367,7 +367,13 @@ chatbot: false
                     let user = global.db.data.users[m.sender]
                     if (!['owner-unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
                     if (name != 'owner-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'tool-delete.js' && chat?.isBanned && !isROwner) return
-                }
+                    if (m.text && user.banned && !isROwner) {
+		       if (user.antispam > 2) return
+m.reply(`🚫 *YOU ARE BANNED, YOU CAN'T USE THE COMMANDS*\n📑 *REASON: ${user.messageSpam === 0 ? 'UNSPECIFIED' : user.messageSpam}*\n⚠️ \`\`\`IF THIS BOT IS AN OFFICIAL ACCOUNT AND HAS EVIDENCE TO SUPPORT THAT THIS MESSAGE IS AN ERROR, YOU CAN MAKE YOUR CASE AT:\`\`\`👉 ${owner}`)
+user.antispam++	
+return 
+		    }
+		}
                 if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Both Owner
                     fail("owner", m, this)
                     continue
