@@ -256,6 +256,14 @@ throw false
 chat.antiTwitch = isEnable 
 break
 
+		  case 'antiporn': case 'antinude':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiPorn = isEnable          
+break
 		  
       case 'antibotclone':
       if (m.isGroup) {
@@ -372,7 +380,7 @@ break
 		  
     default:
      if (!/[01]/.test(command)) return m.reply(`
-╭━⊱⊱⊱『 *⚙️BOT SETTINGS⚙️* 』⊱⊱⊱━
+╭━⊱⊱⊱『 *⚙️BOT SETTINGS⚙️*』
 > bot on off features
      
 ╭━━━━⊱『 *OWNER CMD*』
@@ -443,6 +451,12 @@ break
 
 ⚙️⛊ *${usedPrefix}antiDiscord* 
 > bot will detect discord links 
+
+⚙️⛊ *${usedPrefix}antiTwitch* 
+> bot will detect twitch links
+
+⚙️⛊ *${usedPrefix}antinude* 
+> bot will detect +18 things
 
 
 > bot will detect and remove these all whoever will violate it
