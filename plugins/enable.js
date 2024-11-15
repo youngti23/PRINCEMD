@@ -372,85 +372,94 @@ break
 		  
     default:
      if (!/[01]/.test(command)) return m.reply(`
-╭━⊱⊱⊱『 *⚙️Bot settings⚙️* 』⊱⊱⊱━
+╭━⊱⊱⊱『 *⚙️BOT SETTINGS⚙️* 』⊱⊱⊱━
 > bot on off features
      
-╭━━━━⊱『 *Ownercmd*』
-┃⛊ *${usedPrefix}pmblocker*
+╭━━━━⊱『 *OWNER CMD*』
+
+⚙️⛊ *${usedPrefix}pmblocker*
 > Auto inbox blocker 
 
-┃⛊ *${usedPrefix}onlydm*
+⚙️⛊ *${usedPrefix}onlydm*
 > bot will only work in inbox
 
-┃⛊ *${usedPrefix}onlyg*
+⚙️⛊ *${usedPrefix}onlyg*
 > bot will only work in group
 
-┃⛊ *${usedPrefix}autotype*
+⚙️⛊ *${usedPrefix}autotype*
 > bot will show auto typing on chats
 
-┃⛊ *${usedPrefix}ᴏɴ/ᴏғғ autobio*
+⚙️⛊ *${usedPrefix}autobio*
 > bot auto bio 
 
-┃⛊ *${usedPrefix}antibotclone*
+⚙️⛊ *${usedPrefix}antibotclone*
 > jadibot will be left if main bot in the same gp
 
 
 
-╭━━━━⊱『 *Admin cmd*』
-┃⛊ *${usedPrefix}welcome*
+╭━━━━⊱『 *ADMIN CMD*』
+
+⚙️⛊ *${usedPrefix}welcome*
 > bot will welcome and goodbye new joiners and lefters
 
-┃⛊ *${usedPrefix}autosticker*
+⚙️⛊ *${usedPrefix}autosticker*
 > bot will create auto sticker if someone will send img/short video
 
-┃⛊ *${usedPrefix}detect*
+⚙️⛊ *${usedPrefix}detect*
 > not added yet
 
-┃⛊ *${usedPrefix}jarvis*
+⚙️⛊ *${usedPrefix}jarvis*
 > voice chatbot
 
-┃⛊ *${usedPrefix}antispam*
+⚙️⛊ *${usedPrefix}antispam*
 > bot will detect spammers 
 
-┃⛊ *${usedPrefix}antilinkAll*
+⚙️⛊ *${usedPrefix}antilinkall*
 > bot will detect all links
 
-┃⛊ *${usedPrefix}antitoxic*
+⚙️⛊ *${usedPrefix}antitoxic*
 > bot will detect bad words
 
-┃⛊ *${usedPrefix}antiTiktok*
+⚙️⛊ *${usedPrefix}antiTiktok*
 > bot will detect tiktok links 
 
-┃⛊ *${usedPrefix}antiYoutube*
+⚙️⛊ *${usedPrefix}antiYoutube*
 > bot will detect youtube links
 
-┃⛊ *${usedPrefix}antiTelegram*
+⚙️⛊ *${usedPrefix}antiTelegram*
 > bot will detect telegram links
 
-┃⛊ *${usedPrefix}antiFacebook*
+⚙️⛊ *${usedPrefix}antiFacebook*
 > bot will detect facebook links
 
-┃⛊ *${usedPrefix}antiInstagram*
+⚙️⛊ *${usedPrefix}antiInstagram*
 > bot will detect Instagram link
 
-┃⛊ *${usedPrefix}antiTwitter* 
+⚙️⛊ *${usedPrefix}antiTwitter* 
 > bot will detect twitter links 
+
+⚙️⛊ *${usedPrefix}antiThreads* 
+> bot will detect Threads links 
+
+⚙️⛊ *${usedPrefix}antiDiscord* 
+> bot will detect discord links 
 
 
 > bot will detect and remove these all whoever will violate it
 
 
-╭━━━━⊱『 *User cmd*』
-┃⛊ *${usedPrefix}chatbot*
+╭━━━━⊱『 *USER CMD*』
+⚙️⛊ *${usedPrefix}chatbot*
 > bot will start chating 
 
-┃⛊ *${usedPrefix}princechat or princegpt*
+⚙️⛊ *${usedPrefix}princechat or princegpt*
 > Princebot advance chatbot you can ask anything
 
 ╰━━━━━━━━━━━━━━
 
-*🔻Exᴀᴍᴘʟᴇ🔻 :*
+*🔻EXAMPLE🔻*
 > example message you can trun on, off like this
+
 *${usedPrefix}on* welcome
 *${usedPrefix}off* welcome
 `)
