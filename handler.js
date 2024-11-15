@@ -121,51 +121,82 @@ export async function handler(chatUpdate) {
             if (typeof chat !== "object")
                 global.db.data.chats[m.chat] = {}
             if (chat) {
-                if (!("antiDelete" in chat)) chat.antiDelete = true
-                if (!("antiLink" in chat)) chat.antiLink = false
-                if (!("antiSticker" in chat)) chat.antiSticker = false
-                if (!("antiToxic" in chat)) chat.antiToxic = false
-		//if (!('anticall' in chat)) chat.antiCall = false
-                if (!("detect" in chat)) chat.detect = false
-                if (!("getmsg" in chat)) chat.getmsg = true
-                if (!("isBanned" in chat)) chat.isBanned = false
-                if (!("nsfw" in chat)) chat.nsfw = false
-                if (!("sBye" in chat)) chat.sBye = ""
-                if (!("sDemote" in chat)) chat.sDemote = ""
-                if (!("simi" in chat)) chat.simi = false
-                if (!("sPromote" in chat)) chat.sPromote = ""
-                if (!("sWelcome" in chat)) chat.sWelcome = ""
-                if (!("useDocument" in chat)) chat.useDocument = false
-                if (!("viewOnce" in chat)) chat.viewOnce = false
-                if (!("viewStory" in chat)) chat.viewStory = false
-		if (!('antiBotClone' in chat)) chat.antiBotClone = false
-                if (!("welcome" in chat)) chat.welcome = false
-                if (!("chatbot" in chat)) chat.chatbot = false
-                if (!isNumber(chat.expired)) chat.expired = 0
-            } else
-                global.db.data.chats[m.chat] = {
-                    antiDelete: true,
-                    antiLink: false,
-                 //   antiCall: false,
-                    antiSticker: false,
-                    antiToxic: false,
-		    antiBotClone: false,
-                    detect: false,
-                    expired: 0,
-                    getmsg: true,
-                    isBanned: false,
-                    nsfw: false, 
-                    sBye: "",
-                    sDemote: "",
-                    simi: false,
-                    sPromote: "",
-                    sticker: false,
-                    sWelcome: "",
-                    useDocument: false,
-                    viewOnce: false,
-                    viewStory: false,
-                    welcome: false,
-                    chatbot: false
+if (!("antiDelete" in chat)) chat.antiDelete = true
+if (!("antiLink" in chat)) chat.antiLink = false
+if (!("antiSticker" in chat)) chat.antiSticker = false
+if (!("antiToxic" in chat)) chat.antiToxic = false
+if (!('antiver' in chat)) chat.antiver = false 
+if (!('antiPorn' in chat)) chat.antiPorn = true     
+if (!('antiLink' in chat)) chat.antiLink = false     
+if (!('antiLink2' in chat)) chat.antiLink2 = false
+if (!('antiTiktok' in chat)) chat.antiTiktok = false
+if (!('antiYoutube' in chat)) chat.antiYoutube = false
+if (!('antiTelegram' in chat)) chat.antiTelegram = false
+if (!('antiFacebook' in chat)) chat.antiFacebook = false
+if (!('antiInstagram' in chat)) chat.antiInstagram = false
+if (!('antiTwitter' in chat)) chat.antiTwitter = false
+if (!('antiDiscord' in chat)) chat.antiDiscord = false
+if (!('antiThreads' in chat)) chat.antiThreads = false
+if (!('antiTwitch' in chat)) chat.antiTwitch = false
+if (!('antifake' in chat)) chat.antifake = false
+if (!("detect" in chat)) chat.detect = false
+if (!("getmsg" in chat)) chat.getmsg = true
+if (!("isBanned" in chat)) chat.isBanned = false
+if (!("nsfw" in chat)) chat.nsfw = false
+if (!("sBye" in chat)) chat.sBye = ""
+if (!("sDemote" in chat)) chat.sDemote = ""
+if (!("simi" in chat)) chat.simi = false
+if (!("sPromote" in chat)) chat.sPromote = ""
+if (!("sWelcome" in chat)) chat.sWelcome = ""
+if (!("useDocument" in chat)) chat.useDocument = false
+if (!("viewOnce" in chat)) chat.viewOnce = false
+if (!("viewStory" in chat)) chat.viewStory = false
+if (!('antiBotClone' in chat)) chat.antiBotClone = false
+if (!("welcome" in chat)) chat.welcome = false
+if (!("chatbot" in chat)) chat.chatbot = false
+if (!("princechat" in chat)) chat.princechat = false
+if (!isNumber(chat.expired)) chat.expired = 0
+		   
+} else
+		    
+global.db.data.chats[m.chat] = {
+antiDelete: true,
+antiLink: false,
+antiSticker: false,
+antiToxic: false,
+antiver: true,
+antiPorn: true,
+antiLink: false,
+antiLink2: false,
+antiTiktok: false,
+antiYoutube: false,
+antiTelegram: false,
+antiFacebook: false,
+antiInstagram: false,
+antiTwitter: false,
+antiDiscord: false,
+antiThreads: false,
+antiTwitch: false,
+antifake: false,
+antiBotClone: false,
+detect: false,
+expired: 0,
+getmsg: true,
+isBanned: false,
+nsfw: false, 
+sBye: "",
+sDemote: "",
+simi: false,
+sPromote: "",
+sticker: false,
+sWelcome: "",
+useDocument: false,
+viewOnce: false,
+viewStory: false,
+welcome: false,
+princechat: false,                    
+chatbot: false
+			
                 }
           
               
