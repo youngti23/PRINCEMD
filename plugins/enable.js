@@ -373,85 +373,86 @@ break
     default:
      if (!/[01]/.test(command)) return m.reply(`
 ╭━⊱⊱⊱『 *Bot settings* 』⊱⊱⊱━
-     bot on off features
+> bot on off features
      
 ╭━━━━⊱『 *Ownercmd*』⊱━━━━
-│⛊ ${usedPrefix}pmblocker
-Auto inbox blocker 
+┃⛊ *${usedPrefix}pmblocker*
+> Auto inbox blocker 
 
-│⛊ ${usedPrefix}onlydm
-bot will only work in inbox
+┃⛊ *${usedPrefix}onlydm*
+> bot will only work in inbox
 
-│⛊ ${usedPrefix}onlyg
-bot will only work in group
+┃⛊ *${usedPrefix}onlyg*
+> bot will only work in group
 
-│⛊ ${usedPrefix}autotype
-bot will show auto typing on chats
+┃⛊ *${usedPrefix}autotype*
+> bot will show auto typing on chats
 
-│⛊ ${usedPrefix}ᴏɴ/ᴏғғ autobio
-bot auto bio 
+┃⛊ *${usedPrefix}ᴏɴ/ᴏғғ autobio*
+> bot auto bio 
 
-│⛊ ${usedPrefix}antibotclone
-jadibot will be left if main bot in the same gp
+┃⛊ *${usedPrefix}antibotclone*
+> jadibot will be left if main bot in the same gp
 
 ╰━━━━━━━━━━━━━━━
 
 
 ╭━━━━⊱『 *Admin cmd*』⊱━━━━
-│⛊ ${usedPrefix}welcome
-bot will welcome and goodbye new joiners and lefters
+┃⛊ *${usedPrefix}welcome*
+> bot will welcome and goodbye new joiners and lefters
 
-│⛊ ${usedPrefix}autosticker
-bot will create auto sticker if someone will send img/short video
+┃⛊ *${usedPrefix}autosticker*
+> bot will create auto sticker if someone will send img/short video
 
-│⛊ ${usedPrefix}detect
-not added yet
+┃⛊ *${usedPrefix}detect*
+> not added yet
 
-│⛊ ${usedPrefix}jarvis
-voice chatbot
+┃⛊ *${usedPrefix}jarvis*
+> voice chatbot
 
-│⛊ ${usedPrefix}antispam
-bot will detect spammers 
 
-│⛊ ${usedPrefix}antilinkAll
-bot will detect all links
+┃⛊ *${usedPrefix}antispam*
+> bot will detect spammers 
 
-│⛊ ${usedPrefix}antitoxic
+┃⛊ *${usedPrefix}antilinkAll*
+> bot will detect all links
+
+┃⛊ *${usedPrefix}antitoxic*
 bot will detect bad words
 
-│⛊ ${usedPrefix}antiTiktok
-bot will detect tiktok links 
+┃⛊ *${usedPrefix}antiTiktok*
+> bot will detect tiktok links 
 
-│⛊ ${usedPrefix}antiYoutube
-bot will detect youtube links
+┃⛊ *${usedPrefix}antiYoutube*
+> bot will detect youtube links
 
-│⛊ ${usedPrefix}antiTelegram
-bot will detect telegram links
+┃⛊ *${usedPrefix}antiTelegram*
+> bot will detect telegram links
 
-│⛊ ${usedPrefix}antiFacebook
-bot will detect facebook links
+┃⛊ *${usedPrefix}antiFacebook*
+> bot will detect facebook links
 
-│⛊ ${usedPrefix}antiInstagram
-bot will detect Instagram link
+┃⛊ *${usedPrefix}antiInstagram*
+> bot will detect Instagram link
 
-│⛊ ${usedPrefix}antiTwitter 
-bot will detect twitter links 
+┃⛊ *${usedPrefix}antiTwitter* 
+> bot will detect twitter links 
 
 
-bot will detect and remove these all whoever will violate it
+> bot will detect and remove these all whoever will violate it
 ╰━━━━━━━━━━━━━━
 
 
 ╭━━━━⊱『 *User cmd*』⊱━━━━
-│⛊ ${usedPrefix}chatbot
-bot will start chating 
+┃⛊ *${usedPrefix}chatbot*
+> bot will start chating 
 
-│⛊ ${usedPrefix}princechat or princegpt
-Princebot advance chatbot you can ask anything
+┃⛊ *${usedPrefix}princechat or princegpt*
+> Princebot advance chatbot you can ask anything
 
 ╰━━━━━━━━━━━━━━
 *🔻Exᴀᴍᴘʟᴇ🔻 :*
-example message you can trun on, off like this
+> example message you can trun on, off like this
 *${usedPrefix}on* welcome
 *${usedPrefix}off* welcome
 `)
