@@ -153,7 +153,7 @@ break
 
 
 		  
-		  case 'antilink2': case 'antienlace2':
+		  case 'antilink2': case 'antilinkall':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
@@ -372,10 +372,10 @@ break
 		  
     default:
      if (!/[01]/.test(command)) return m.reply(`
-╭━⊱⊱⊱『 *Bot settings* 』⊱⊱⊱━
+╭━⊱⊱⊱『 *⚙️Bot settings⚙️* 』⊱⊱⊱━
 > bot on off features
      
-╭━━━━⊱『 *Ownercmd*』⊱━━━━
+╭━━━━⊱『 *Ownercmd*』
 ┃⛊ *${usedPrefix}pmblocker*
 > Auto inbox blocker 
 
@@ -394,10 +394,9 @@ break
 ┃⛊ *${usedPrefix}antibotclone*
 > jadibot will be left if main bot in the same gp
 
-╰━━━━━━━━━━━━━━━
 
 
-╭━━━━⊱『 *Admin cmd*』⊱━━━━
+╭━━━━⊱『 *Admin cmd*』
 ┃⛊ *${usedPrefix}welcome*
 > bot will welcome and goodbye new joiners and lefters
 
@@ -410,7 +409,6 @@ break
 ┃⛊ *${usedPrefix}jarvis*
 > voice chatbot
 
-
 ┃⛊ *${usedPrefix}antispam*
 > bot will detect spammers 
 
@@ -418,7 +416,7 @@ break
 > bot will detect all links
 
 ┃⛊ *${usedPrefix}antitoxic*
-bot will detect bad words
+> bot will detect bad words
 
 ┃⛊ *${usedPrefix}antiTiktok*
 > bot will detect tiktok links 
@@ -440,10 +438,9 @@ bot will detect bad words
 
 
 > bot will detect and remove these all whoever will violate it
-╰━━━━━━━━━━━━━━
 
 
-╭━━━━⊱『 *User cmd*』⊱━━━━
+╭━━━━⊱『 *User cmd*』
 ┃⛊ *${usedPrefix}chatbot*
 > bot will start chating 
 
@@ -451,6 +448,7 @@ bot will detect bad words
 > Princebot advance chatbot you can ask anything
 
 ╰━━━━━━━━━━━━━━
+
 *🔻Exᴀᴍᴘʟᴇ🔻 :*
 > example message you can trun on, off like this
 *${usedPrefix}on* welcome
