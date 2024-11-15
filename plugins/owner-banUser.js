@@ -101,7 +101,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 };
 
 // Command settings
-handler.command = /^banuser$/i;
+handler.command = /^banuser|ban$/i;
 handler.rowner = true;
 
 export default handler;
