@@ -122,12 +122,10 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {}
             if (chat) {
 if (!("antiDelete" in chat)) chat.antiDelete = true
-if (!("antiLink" in chat)) chat.antiLink = false
 if (!("antiSticker" in chat)) chat.antiSticker = false
 if (!("antiToxic" in chat)) chat.antiToxic = false
 if (!('antiver' in chat)) chat.antiver = false 
-if (!('antiPorn' in chat)) chat.antiPorn = true     
-if (!('antiLink' in chat)) chat.antiLink = false     
+if (!('antiPorn' in chat)) chat.antiPorn = true         
 if (!('antiLink2' in chat)) chat.antiLink2 = false
 if (!('antiTiktok' in chat)) chat.antiTiktok = false
 if (!('antiYoutube' in chat)) chat.antiYoutube = false
@@ -161,12 +159,10 @@ if (!isNumber(chat.expired)) chat.expired = 0
 		    
 global.db.data.chats[m.chat] = {
 antiDelete: true,
-antiLink: false,
 antiSticker: false,
 antiToxic: false,
 antiver: true,
 antiPorn: true,
-antiLink: false,
 antiLink2: false,
 antiTiktok: false,
 antiYoutube: false,
