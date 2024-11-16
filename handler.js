@@ -222,15 +222,20 @@ chatbot: false
             console.error(e)
         }
         if (opts["nyimak"]) return
-        //if (opts["pconly"] && m.chat.endsWith("g.us")) return
-        //if (opts["gconly"] && !m.chat.endsWith("g.us")) return
+	if (!m.fromMe && opts['self'])  return
 	if (settings.solopv && m.chat.endsWith('g.us')) return  
         if (settings.sologp && !m.chat.endsWith('g.us')) return
-	//if (m.chat !== '120363032639627036@g.us') return
-       // if (m.chat === '120363032639627036@g.us' && m.sender !== '923092668108@s.whatsapp.net') return;
         if (opts["swonly"] && m.chat !== "status@broadcast") return
         if (typeof m.text !== "string")
             m.text = ""
+
+
+	    
+        //if (opts["pconly"] && m.chat.endsWith("g.us")) return
+        //if (opts["gconly"] && !m.chat.endsWith("g.us")) return
+	//if (m.chat !== '120363032639627036@g.us') return
+       // if (m.chat === '120363032639627036@g.us' && m.sender !== '923092668108@s.whatsapp.net') return;
+
 
         const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(m.sender)
         const isOwner = isROwner || m.fromMe
