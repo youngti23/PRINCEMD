@@ -395,8 +395,11 @@ break
      
 ╭━━━━⊱『 *OWNER CMD*』
 
+⚙️⛊ *${usedPrefix}public*
+> make bot private and public
+
 ⚙️⛊ *${usedPrefix}pmblocker*
-> Auto inbox blocker 
+> auto inbox blocker 
 
 ⚙️⛊ *${usedPrefix}onlydm*
 > bot will only work in inbox
