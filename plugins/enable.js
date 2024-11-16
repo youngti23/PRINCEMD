@@ -324,7 +324,17 @@ break
       }
       bot.restrict = isEnable
       break
-   
+
+		  case 'public':
+    case 'publico':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['self'] = !isEnable
+      break
+		  
 	  
 	case 'autotype':
     case 'alwaysonline':
