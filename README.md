@@ -32,8 +32,35 @@
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 </div>
 
-### 𝘾𝙇𝙄𝘾𝙆 𝘼𝙉𝘿 𝙒𝘼𝙄𝙏 𝙏𝙊 𝙊𝙋𝙀𝙉 𝙏𝙃𝙀 𝙎𝙄𝙏𝙀
 
+<div align="center">
+    
+   ### 𝘾𝙇𝙄𝘾𝙆 𝘼𝙉𝘿 𝙒𝘼𝙄𝙏 𝙏𝙊 𝙊𝙋𝙀𝙉 𝙏𝙃𝙀 𝙎𝙄𝙏𝙀📳
+   <br>
+    <br>
+</div>
+<br>
+
+<div align="center">
+    
+   ### SHORT SESSION FOR HEROKU  
+   <h3 style="color: #430098;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h3>
+    <a href="https://short-pair-for-heorku.onrender.com">
+        <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-purple?style=for-the-badge&logo=heroku&logoColor=white">
+    </a>
+    <br>
+    <div align="center">
+    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h3>
+    <a href="https://short-pair-for-heorku.onrender.com">
+        <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-red?style=for-the-badge&logo=heroku&logoColor=white">
+    </a>
+    <br>
+</div>
+    <br>
+<br>
+<br>
+       
+   ### LONG SESSION FOR PANELS AND ALL PLATFORMS
 <div align="center">
     <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀 1</h3>
     <a href="https://prince-new-base64-pair.onrender.com">
