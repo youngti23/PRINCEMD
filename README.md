@@ -48,10 +48,11 @@
     <a href="https://short-pair-for-heorku.onrender.com">
         <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-purple?style=for-the-badge&logo=heroku&logoColor=white">
     </a>
-    <br>
+    </div>
+   <br>
     <div align="center">
     <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h3>
-    <a href="embarrassed-corliss-secktor-ead5ff5a.koyeb.app">
+    <a href="https://embarrassed-corliss-secktor-ead5ff5a.koyeb.app/">
         <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-red?style=for-the-badge&logo=heroku&logoColor=white">
     </a>
     <br>
@@ -59,8 +60,12 @@
     <br>
 <br>
 <br>
+<div align="center">
        
    ### LONG SESSION FOR PANELS AND ALL PLATFORMS
+   
+</div>
+   
 <div align="center">
     <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀 1</h3>
     <a href="https://prince-new-base64-pair.onrender.com">
@@ -77,8 +82,10 @@
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 </div>
-
+<div align="center">
+    
 ### Deploy Options
+</div>
 <div align="center">
     <a href="https://heroku.com/deploy?template=https://github.com/PRINCE-GDS/prince-ds">
         <img height="30" title="Heroku" src="https://img.shields.io/badge/𝗛𝗘𝗥𝗢𝗞𝗨-9966CC?style=for-the-badge&logo=render">
@@ -91,23 +98,37 @@
     </a>
 </div>
 
-### Deploy on Koyeb
-<p align="left">
+<div align="center">
+    
+### Run on Koyeb
+
+</div>
+    
+<p align="center">
     <a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FPRINCE-GDS%2Fprince-ds&branch=main&nameprincegds&builder=dockerfile&env[DATABASE_URL]=&env[SESSION_ID]=your+sessionid+here&env[MODE]=public&env=[autoRead]=false&env[statusview]=false&env[REMOVEBG_KEY]=your+rmbg+key&env[antidelete]=false">
         <img src="https://www.koyeb.com/static/images/deploy/button.svg" height="30"/>
     </a>
 </p>
 
 ### <br>
+<div align="center">
+    
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app)
+
+</div>
 
 <div align="center">
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 </div>
 
+<div align="center">
+    
 ### 🟢 𝙎𝙐𝙋𝙋𝙊𝙍𝙏 𝙂𝙍𝙊𝙐𝙋 𝙇𝙄𝙉𝙆 🟢
-<p align="left">
+
+</div> 
+    
+<p align="center">
     <a href="https://chat.whatsapp.com/Jo5bmHMAlZpEIp75mKbwxP">
         <img height="30" title="Support Group" src="https://img.shields.io/badge/Support%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
     </a>
@@ -120,7 +141,7 @@
 
 ### 𝗟𝗜𝗖𝗘𝗡𝗦𝗘: [Click here](https://github.com/PRINCE-GDS/PRINXE-MD/blob/main/LICENSE)
 
-<div align="center">
+<div align="left">
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 </div>
@@ -133,7 +154,7 @@
 - 🌐 Portuguese = pt
 - 🌐 Spanish = es
 
-<div align="center">
+<div align="left">
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 </div>
