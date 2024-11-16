@@ -416,6 +416,8 @@ break
 ⚙️⛊ *${usedPrefix}antibotclone*
 > jadibot will be left if main bot in the same gp
 
+⚙️⛊ *${usedPrefix}restrict*
+> If restrict mode is on the few on off features will work otherwise won't like antilinkall
 
 
 ╭━━━━⊱『 *ADMIN CMD*』
