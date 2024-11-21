@@ -783,11 +783,10 @@ export async function groupsUpdate(groupsUpdate) {
 Delete Chat
  */
 
- 
-export async function deleteUpdate(message) {
+ export async function deleteUpdate(message) {
     try {
-        // Check if antidelete feature is enabled
-        if (!process.env.antidelete || process.env.antidelete.toLowerCase() === 'false') return;
+        // Check if the antidelete feature is enabled
+        if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
 
         const { fromMe, id, participant, remoteJid } = message;
 
@@ -795,36 +794,32 @@ export async function deleteUpdate(message) {
         if (fromMe) return;
 
         // Load the deleted message
-        const msg = this.loadMessage(id);
+        let msg = this.serializeM(this.loadMessage(id));
         if (!msg) return;
 
-        // Get the participant who deleted the message
-        const deletedBy = participant ? `@${participant.split`@`[0]}` : 'Unknown';
-
-        // Check if it's a group or private chat
+        // Check if the chat is a group or private
         const isGroup = remoteJid.endsWith('@g.us');
         const chatType = isGroup ? 'Group' : 'Private Chat';
 
-        // Stylish notification
-        const notification = `
-🛑 *Message Deleted Alert* 🛑
+        // Stylish forwarded message
+        const forwardedInfo = `
+🛑 *Message Deleted Forwarded* 🛑
 
 👥 *Chat Type:* ${chatType}
-👤 *Deleted by:* ${deletedBy}
+👤 *Deleted By:* @${participant.split`@`[0]}
 💬 *Deleted Message Content:* _shown below 👇_
         `.trim();
 
-        // Send the notification to the bot's user
-        await this.reply(conn.user.id, notification, null, {
-            mentions: [participant]
-        });
-
-        // Forward the deleted message to the bot's user
-        await this.copyNForward(conn.user.id, msg, false).catch(err => console.error('Error forwarding message:', err));
+        // Forward the deleted message with context to the bot's user
+        await this.copyNForward(conn.user.id, msg, false, {
+            caption: forwardedInfo,
+            mentions: [participant],
+        }).catch(e => console.log(e, msg));
     } catch (e) {
-        console.error('Error in deleteUpdate:', e);
+        console.error(e);
     }
 }
+
 
 
 /*
