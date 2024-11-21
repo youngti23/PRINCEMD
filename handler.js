@@ -783,13 +783,7 @@ export async function groupsUpdate(groupsUpdate) {
 Delete Chat
  */
 
-
-/*
- Polling Update 
-*/
-export async function pollUpdate(message) {
-  for (const { key, update } of message) {
-            if (messexport async function deleteUpdate(message) {
+export async function deleteUpdate(message) {
     try {
         // Check if antidelete feature is enabled
         if (!process.env.antidelete || process.env.antidelete.toLowerCase() === 'false') return;
@@ -830,7 +824,18 @@ export async function pollUpdate(message) {
     } catch (e) {
         console.error('Error in deleteUpdate:', e);
     }
-	    }age.pollUpdates) {
+}
+
+
+
+
+
+/*
+ Polling Update 
+*/
+export async function pollUpdate(message) {
+  for (const { key, update } of message) {
+            if (message.pollUpdates) {
                 const pollCreation = await this.serializeM(this.loadMessage(key.id))
                 if (pollCreation) {
                     const pollMessage = await getAggregateVotesInPollMessage({
