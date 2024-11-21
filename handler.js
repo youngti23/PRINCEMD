@@ -785,36 +785,40 @@ Delete Chat
 
  export async function deleteUpdate(message) {
     try {
-        // Check if the antidelete feature is enabled
         if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
 
-        const { fromMe, id, participant, remoteJid } = message;
-
-        // Ignore messages sent by the bot itself
+        const { fromMe, id, participant, timestamp } = message;
         if (fromMe) return;
 
-        // Load the deleted message
         let msg = this.serializeM(this.loadMessage(id));
         if (!msg) return;
 
-        // Check if the chat is a group or private
-        const isGroup = remoteJid.endsWith('@g.us');
-        const chatType = isGroup ? 'Group' : 'Private Chat';
+        let chat = global.db.data.chats[msg.chat] || {};
 
-        // Stylish forwarded message
-        const forwardedInfo = `
-🛑 *Message Deleted Forwarded* 🛑
+        // Format the deletion time
+        let deleteTime = new Date(timestamp * 1000).toLocaleString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true,
+        });
 
-👥 *Chat Type:* ${chatType}
-👤 *Deleted By:* @${participant.split`@`[0]}
-💬 *Deleted Message Content:* _shown below 👇_
-        `.trim();
+        await this.reply(
+            conn.user.id,
+            `
+            🚨 *Message Deleted Alert!* 🚨
 
-        // Forward the deleted message with context to the bot's user
-        await this.copyNForward(conn.user.id, msg, false, {
-            caption: forwardedInfo,
-            mentions: [participant],
-        }).catch(e => console.log(e, msg));
+            📲 *Number:* @${participant.split`@`[0]}  
+            🕒 *Deleted At:* ${deleteTime}  
+            ✋ *Message Deleted Below:* 👇  
+
+            📌 *Stay vigilant!* 😎
+            `.trim(),
+            msg,
+            { mentions: [participant] }
+        );
+
+        this.copyNForward(conn.user.id, msg, false).catch(e => console.log(e, msg));
     } catch (e) {
         console.error(e);
     }
