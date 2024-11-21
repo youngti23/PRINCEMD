@@ -85,6 +85,11 @@
       "required": false,
       "value": "false"
       },
+     "ANTI_CALL_MSG": {
+      "description": "Type your message for anticall feature",
+      "required": false,
+      "value": ""
+    },
     "ANTI_CALL": {
       "description": "Make it true if you want bot to Block unknown callers",
       "required": false,
