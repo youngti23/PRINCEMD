@@ -783,6 +783,7 @@ export async function groupsUpdate(groupsUpdate) {
 Delete Chat
  */
 
+ 
 export async function deleteUpdate(message) {
     try {
         // Check if antidelete feature is enabled
@@ -797,20 +798,19 @@ export async function deleteUpdate(message) {
         const msg = this.loadMessage(id);
         if (!msg) return;
 
-        // Format the deleted message timestamp
-        const timeDeleted = new Date().toLocaleString();
-
         // Check if it's a group or private chat
         const isGroup = remoteJid.endsWith('@g.us');
         const chatType = isGroup ? 'Group' : 'Private Chat';
 
-        // Prepare stylish notification
+        // Get the participant who deleted the message
+        const deletedBy = participant ? `@${participant.split`@`[0]}` : 'Unknown';
+
+        // Prepare the stylish notification message
         const notification = `
 🛑 *Message Deleted Alert* 🛑
 
-📅 *Time:* ${timeDeleted}
-👤 *Deleted by:* @${participant.split`@`[0]}
-🔗 *Chat Type:* ${chatType}
+👥 *Chat Type:* ${chatType}
+👤 *Deleted by:* ${deletedBy}
 💬 *Deleted Message Content:* _shown below 👇_
         `.trim();
 
@@ -825,7 +825,6 @@ export async function deleteUpdate(message) {
         console.error('Error in deleteUpdate:', e);
     }
 }
-
 
 
 
