@@ -782,43 +782,6 @@ export async function groupsUpdate(groupsUpdate) {
 /**
 Delete Chat
  */
-export async function deleteUpdate(message) {
-    try {
-       
-        if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
-
-        const { fromMe, id, participant } = message;
-
-        if (fromMe) return;
-
-        let msg = this.serializeM(this.loadMessage(id));
-        if (!msg) return;
-
-        let chat = global.db.data.chats[msg.chat] || {};
-
-        
-        const timeDeleted = new Date().toLocaleString();
-
-       
-        let notification = `
-🛑 *Message Deleted Alert* 🛑
-
-📅 *Time:* ${timeDeleted}
-👤 *Deleted by:* @${participant.split`@`[0]}
-💬 *Message content:* _shown below 👇_
-
-🔗 *Chat Type:* ${msg.isGroup ? 'Group' : 'Private Chat'}
-`;
-        await this.reply(msg.chat, notification.trim(), msg, {
-            mentions: [participant]
-        });
-
-      
-        await this.copyNForward(msg.chat, msg, false).catch(e => console.log(e, msg));
-    } catch (e) {
-        console.error(e);
-    }
-}
 
 
 /*
@@ -826,7 +789,48 @@ export async function deleteUpdate(message) {
 */
 export async function pollUpdate(message) {
   for (const { key, update } of message) {
-            if (message.pollUpdates) {
+            if (messexport async function deleteUpdate(message) {
+    try {
+        // Check if antidelete feature is enabled
+        if (!process.env.antidelete || process.env.antidelete.toLowerCase() === 'false') return;
+
+        const { fromMe, id, participant, remoteJid } = message;
+
+        // Ignore messages sent by the bot itself
+        if (fromMe) return;
+
+        // Load the deleted message
+        const msg = this.loadMessage(id);
+        if (!msg) return;
+
+        // Format the deleted message timestamp
+        const timeDeleted = new Date().toLocaleString();
+
+        // Check if it's a group or private chat
+        const isGroup = remoteJid.endsWith('@g.us');
+        const chatType = isGroup ? 'Group' : 'Private Chat';
+
+        // Prepare stylish notification
+        const notification = `
+🛑 *Message Deleted Alert* 🛑
+
+📅 *Time:* ${timeDeleted}
+👤 *Deleted by:* @${participant.split`@`[0]}
+🔗 *Chat Type:* ${chatType}
+💬 *Deleted Message Content:* _shown below 👇_
+        `.trim();
+
+        // Send the notification to the chat
+        await this.reply(remoteJid, notification, null, {
+            mentions: [participant]
+        });
+
+        // Forward the deleted message back to the chat
+        await this.copyNForward(remoteJid, msg, false).catch(err => console.error('Error forwarding message:', err));
+    } catch (e) {
+        console.error('Error in deleteUpdate:', e);
+    }
+	    }age.pollUpdates) {
                 const pollCreation = await this.serializeM(this.loadMessage(key.id))
                 if (pollCreation) {
                     const pollMessage = await getAggregateVotesInPollMessage({
