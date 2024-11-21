@@ -798,14 +798,14 @@ export async function deleteUpdate(message) {
         const msg = this.loadMessage(id);
         if (!msg) return;
 
+        // Get the participant who deleted the message
+        const deletedBy = participant ? `@${participant.split`@`[0]}` : 'Unknown';
+
         // Check if it's a group or private chat
         const isGroup = remoteJid.endsWith('@g.us');
         const chatType = isGroup ? 'Group' : 'Private Chat';
 
-        // Get the participant who deleted the message
-        const deletedBy = participant ? `@${participant.split`@`[0]}` : 'Unknown';
-
-        // Prepare the stylish notification message
+        // Stylish notification
         const notification = `
 🛑 *Message Deleted Alert* 🛑
 
@@ -814,19 +814,17 @@ export async function deleteUpdate(message) {
 💬 *Deleted Message Content:* _shown below 👇_
         `.trim();
 
-        // Send the notification to the chat
-        await this.reply(remoteJid, notification, null, {
+        // Send the notification to the bot's user
+        await this.reply(conn.user.id, notification, null, {
             mentions: [participant]
         });
 
-        // Forward the deleted message back to the chat
-        await this.copyNForward(remoteJid, msg, false).catch(err => console.error('Error forwarding message:', err));
+        // Forward the deleted message to the bot's user
+        await this.copyNForward(conn.user.id, msg, false).catch(err => console.error('Error forwarding message:', err));
     } catch (e) {
         console.error('Error in deleteUpdate:', e);
     }
 }
-
-
 
 
 /*
