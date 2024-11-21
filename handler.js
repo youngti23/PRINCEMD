@@ -787,37 +787,25 @@ Delete Chat
     try {
         if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
 
-        const { fromMe, id, participant, timestamp } = message;
+        const { fromMe, id, participant } = message;
         if (fromMe) return;
-
         let msg = this.serializeM(this.loadMessage(id));
         if (!msg) return;
-
         let chat = global.db.data.chats[msg.chat] || {};
 
-        // Format the deletion time
-        let deleteTime = new Date(timestamp * 1000).toLocaleString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true,
-        });
-
         await this.reply(
-            conn.user.id,
+            conn.user.id, 
             `
             🚨 *Message Deleted Alert!* 🚨
-
+            
             📲 *Number:* @${participant.split`@`[0]}  
-            🕒 *Deleted At:* ${deleteTime}  
             ✋ *Message Deleted Below:* 👇  
 
-            📌 *Stay vigilant!* 😎
-            `.trim(),
-            msg,
+            📌 Stay vigilant! 😎
+            `.trim(), 
+            msg, 
             { mentions: [participant] }
         );
-
         this.copyNForward(conn.user.id, msg, false).catch(e => console.log(e, msg));
     } catch (e) {
         console.error(e);
