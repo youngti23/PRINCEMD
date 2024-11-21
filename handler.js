@@ -6,7 +6,7 @@ import { unwatchFile, watchFile } from 'fs'
 import chalk from 'chalk'
 import fetch from 'node-fetch'
 import Pino from 'pino'
-import moment from 'moment-timezone';
+
 
 /**
  * @type {import("@whiskeysockets/baileys")}
@@ -788,32 +788,25 @@ export async function deleteUpdate(message) {
     try {
         if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
 
-        const { fromMe, id, participant, timestamp } = message;
+        const { fromMe, id, participant } = message;
         if (fromMe) return;
-
         let msg = this.serializeM(this.loadMessage(id));
         if (!msg) return;
-
         let chat = global.db.data.chats[msg.chat] || {};
 
-        // Use moment-timezone to handle the timestamp and localize it in Asia/Karachi timezone
-        let deleteTime = moment.unix(timestamp).tz('Asia/Karachi').format('dddd, MMMM Do YYYY, h:mm:ss A');
-
         await this.reply(
-            conn.user.id,
+            conn.user.id, 
             `
             🚨 *Message Deleted Alert!* 🚨
-
+            
             📲 *Number:* @${participant.split`@`[0]}  
-            🕒 *Deleted At:* ${deleteTime}  
             ✋ *Message Deleted Below:* 👇  
 
-            📌 *Stay vigilant!* 😎
-            `.trim(),
-            msg,
+            📌 Stay vigilant! 😎
+            `.trim(), 
+            msg, 
             { mentions: [participant] }
         );
-
         this.copyNForward(conn.user.id, msg, false).catch(e => console.log(e, msg));
     } catch (e) {
         console.error(e);
