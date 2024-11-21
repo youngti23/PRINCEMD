@@ -4,17 +4,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         'close': 'announcement',
     }[(args[0] || '')]
     if (isClose === undefined)
-        throw `
-*✳️ Elija una opción:*
-  *▢ ${usedPrefix + command} close*
-  *▢ ${usedPrefix + command} open*
-`.trim()
+
+    return m.reply(`
+💱 ${mssg.gpSetting}
+
+*⚙️ ${usedPrefix + command} close*
+*⚙️ ${usedPrefix + command} open*
+`)
     await conn.groupSettingUpdate(m.chat, isClose)
 }
-handler.help = ['group *open/close*']
+handler.help = ['group']
 handler.tags = ['group']
-handler.command = ['group', 'grupo'] 
+handler.command = ['group', 'gp'] 
 handler.admin = true
 handler.botAdmin = true
+handler.group = true
 
 export default handler
