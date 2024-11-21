@@ -784,34 +784,42 @@ Delete Chat
  */
 export async function deleteUpdate(message) {
     try {
-           
        
-      if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
+        if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
 
+        const { fromMe, id, participant } = message;
 
-        const {
-            fromMe,
-            id,
-            participant
-        } = message
-        if (fromMe)
-            return
-        let msg = this.serializeM(this.loadMessage(id))
-        if (!msg)
-            return
-        let chat = global.db.data.chats[msg.chat] || {}
+        if (fromMe) return;
+
+        let msg = this.serializeM(this.loadMessage(id));
+        if (!msg) return;
+
+        let chat = global.db.data.chats[msg.chat] || {};
+
+        
+        const timeDeleted = new Date().toLocaleString();
+
        
-            await this.reply(conn.user.id, ` 
-            *Number :* @${participant.split`@`[0]} 
-            👀ʜᴀs ᴅᴇʟᴇᴛᴇᴅ ᴀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ👇🏻
-            `.trim(), msg, {
-                        mentions: [participant]
-                    })
-        this.copyNForward(conn.user.id, msg, false).catch(e => console.log(e, msg))
+        let notification = `
+🛑 *Message Deleted Alert* 🛑
+
+📅 *Time:* ${timeDeleted}
+👤 *Deleted by:* @${participant.split`@`[0]}
+💬 *Message content:* _shown below 👇_
+
+🔗 *Chat Type:* ${msg.isGroup ? 'Group' : 'Private Chat'}
+`;
+        await this.reply(msg.chat, notification.trim(), msg, {
+            mentions: [participant]
+        });
+
+      
+        await this.copyNForward(msg.chat, msg, false).catch(e => console.log(e, msg));
     } catch (e) {
-        console.error(e)
+        console.error(e);
     }
 }
+
 
 /*
  Polling Update 
