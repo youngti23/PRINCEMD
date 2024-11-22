@@ -87,7 +87,7 @@
 ### Deploy Options
 </div>
 <div align="center">
-    <a href="https://heroku.com/deploy?template=https://github.com/PRINCE-GDS/prince-ds">
+    <a href="https://dashboard.heroku.com/new-app?template=https://github.com/PRINCE-GDS/prince-ds">
         <img height="30" title="Heroku" src="https://img.shields.io/badge/𝗛𝗘𝗥𝗢𝗞𝗨-9966CC?style=for-the-badge&logo=render">
     </a>
     <a href="https://repl.it/github/PRINCE-GDS/prince-ds">
