@@ -11,11 +11,10 @@
 "plugins": "plugins" },
     
 "scripts": {
-"start": "node index.js",
-"qr": "node index.js qr",
-"code": "node index.js code",
-"test": "node test.js",
-"test2": "nodemon index.js" },
+  "start": "pm2 start index.js --deep-monitoring --attach --name prince-ds",
+  "stop": "pm2 stop prince-ds",
+  "restart": "pm2 restart prince-ds"
+},
     
 "homepage": "https://github.com/PRINCE-GDS/prince-ds",
 "author": {
@@ -27,7 +26,7 @@
 
 "bugs": {
 "url": "https://github.com/PRINCE-GDS/prince-ds/issues" },
-"license": "GPL-3.0-or-later",
+"license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@brandond/findthelyrics": "^2.0.5",
