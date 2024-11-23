@@ -2,6 +2,10 @@ import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 import fs from 'fs'
+import cheerio from 'cheerio'
+import fetch from 'node-fetch'
+import axios from 'axios'
+import moment from 'moment-timezone' 
 
 import dotenv from 'dotenv'
 dotenv.config()
@@ -49,9 +53,15 @@ global.lolkeysapi = ['GataDios']
 
 //💌------------------------------------------💌
 
+global.cheerio = cheerio
+global.fs = fs
+global.fetch = fetch
+global.axios = axios
+global.moment = moment	
 
 
-    
+
+//💌------------------------------------------💌
 // APIS
 global.APIs = {
   // API Prefix
@@ -125,6 +135,7 @@ global.developer = 'https://wa.me/message/DCAK67ON3XVOG1' //contact
 
 
 //Sticker WM
+global.wm = process.env.BOT_NAME
 global.botname = process.env.BOT_NAME
 global.princebot = '🛡️𝘗𝘙𝘐𝘕𝘊𝘌-𝘉𝘖𝘛-𝘔𝘋🛡️'
 global.packname = process.env.PACK_NAME
