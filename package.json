@@ -102,7 +102,7 @@
   
   "homepage": "https://github.com/PRINCE-GDS/prince-ds#readme",
   "main": "index.js",
-  "name": "prince",
+  "name": "prince-ds",
   
   "optionalDependencies": {
     "@xct007/frieren-scraper": "*",
@@ -110,9 +110,9 @@
   },
   
  "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name prince",
-    "stop": "pm2 stop prince",
-    "restart": "pm2 restart prince"
+    "start": "pm2 start index.js --deep-monitoring --attach --name prince-ds",
+    "stop": "pm2 stop prince-ds",
+    "restart": "pm2 restart prince-ds"
   },
   "keywords": [
   
