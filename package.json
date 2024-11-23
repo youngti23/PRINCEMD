@@ -1,10 +1,10 @@
 {
   "author": {
-    "name": "ds786"
+    "name": "pd427"
   },
   "bugs": {
     "url": "https://github.com/PRINCE-GDS/prince-ds/issues",
-    "license": "GPL-3.0-or-later"
+    "license": "ISC"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -13,7 +13,7 @@
     "@shineiichijo/marika": "^2.0.6",
     "@vitalets/google-translate-api": "^9.2.0",
     "@xct007/tiktok-scraper": "^1.0.2", 
-    "@whiskeysockets/baileys": "^6.7.9",
+    "@whiskeysockets/baileys": "github:nstar-y/Bail",
     "@bochilteam/scraper": "^4.2.4",
     "acrcloud": "^1.4.0",
     "api-dylux": "^1.7.2",
@@ -70,7 +70,7 @@
     "perf_hooks": "^0.0.1",
     "pino": "^7.8.0",
     "pino-pretty": "^7.5.1",
-    "play-dl": "^1.9.7",
+    "pm2": "^5.4.0",
     "qrcode": "^1.5.0",
     "qrcode-terminal": "^0.12.0",
     "readline": "^1.3.0",
@@ -100,23 +100,24 @@
   },
 
   
-  "homepage": "https://github.com/PRINCE-GDS/prince-ds",
+  "homepage": "https://github.com/PRINCE-GDS/prince-ds#readme",
   "main": "index.js",
-  "name": "prince-ds",
+  "name": "prince",
   
   "optionalDependencies": {
     "@xct007/frieren-scraper": "*",
     "cheerio": "npm:cheerio@1.0.0-rc.12"
   },
   
-"scripts": {
-        "start": "node index.js",
-        "test": "node test.js",
-        "test2": "nodemon index.js"
-    },
+ "scripts": {
+    "start": "pm2 start index.js --deep-monitoring --attach --name prince",
+    "stop": "pm2 stop prince",
+    "restart": "pm2 restart prince"
+  },
+  "keywords": [
   
   "type": "module",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "description": "Multi Device WhatsApp user bot",
   "repository": {
     "type": "git",
