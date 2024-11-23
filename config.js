@@ -105,10 +105,10 @@ global.imagen11 = fs.readFileSync("./Assets/menus/img12.jpg")
 
 
 
-global.image1 = fs.readFileSync("./Assets/prn1.png")
-global.image2 = fs.readFileSync("./Assets/prn.png")
+global.imag1 = fs.readFileSync("./Assets/prn.png")
+global.imag2 = fs.readFileSync("./Assets/prn1.png")
 
-global.pimg = [iamge1, image2]
+global.pimg = [iamg1, imag2]
 
 
 
