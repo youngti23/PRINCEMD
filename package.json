@@ -110,10 +110,10 @@
   },
   
  "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name prince-ds",
-    "stop": "pm2 stop prince-ds",
-    "restart": "pm2 restart prince-ds"
-  },
+        "start": "node index.js",
+        "test": "node test.js",
+        "test2": "nodemon index.js"
+    },
   "keywords": [
   
   "type": "module",
