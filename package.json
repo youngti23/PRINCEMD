@@ -1,11 +1,33 @@
 {
-  "author": {
-    "name": "pd427"
-  },
-  "bugs": {
-    "url": "https://github.com/PRINCE-GDS/prince-ds/issues",
-    "license": "ISC"
-  },
+"name": "prince-ds",
+"version": "1.9.5", 
+"description": "Super Bot WhatsApp",
+"main": "index.js",
+"type": "module",
+    
+"directories": {
+"lib": "lib",
+"src": "src",
+"plugins": "plugins" },
+    
+"scripts": {
+"start": "node index.js",
+"qr": "node index.js qr",
+"code": "node index.js code",
+"test": "node test.js",
+"test2": "nodemon index.js" },
+    
+"homepage": "https://github.com/PRINCE-GDS/prince-ds",
+"author": {
+"name": "pd427" },
+    
+"repository": {
+"type": "git",
+"url": "git+https://github.com/PRINCE-GDS/prince-ds.git" },
+
+"bugs": {
+"url": "https://github.com/PRINCE-GDS/prince-ds/issues" },
+"license": "GPL-3.0-or-later",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@brandond/findthelyrics": "^2.0.5",
@@ -13,7 +35,7 @@
     "@shineiichijo/marika": "^2.0.6",
     "@vitalets/google-translate-api": "^9.2.0",
     "@xct007/tiktok-scraper": "^1.0.2",
-    "@whiskeysockets/baileys": "github:nstar-y/Bail",
+    "@whiskeysockets/baileys": "^6.7.9",
     "@bochilteam/scraper": "^4.2.4",
     "acrcloud": "^1.4.0",
     "api-dylux": "^1.7.2",
@@ -28,6 +50,8 @@
     "colors": "^1.4.0",
     "countries-and-timezones": "^3.6.0",
     "dotenv": "^16.1.4",
+    "eslint": "^8.45.0",
+    "eslint-config-google": "^0.14.0",
     "express": "^4.18.1",
     "file-type": "^18.0.0",
     "fg-ig": "^0.0.2",
@@ -88,35 +112,7 @@
     "yargs": "^17.3.1",
     "yt-search": "^2.10.3"
   },
-  "devDependencies": {
-    "eslint": "^8.45.0",
-    "eslint-config-google": "^0.14.0"
-  },
-  "directories": {
-    "lib": "lib",
-    "src": "src",
-    "plugins": "plugins"
-  },
-  "homepage": "https://github.com/PRINCE-GDS/prince-ds#readme",
-  "main": "index.js",
-  "name": "prince-ds",
-  "optionalDependencies": {
+"optionalDependencies": {
     "@xct007/frieren-scraper": "*",
     "cheerio": "npm:cheerio@1.0.0-rc.12"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "node test.js",
-    "test2": "nodemon index.js"
-  },
-  "keywords": [
-    "multi-device", "whatsapp-bot", "user-bot"
-  ],
-  "type": "module",
-  "version": "4.0.0",
-  "description": "Multi Device WhatsApp user bot",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PRINCE-GDS/prince-ds.git"
-  }
-}
+}}
