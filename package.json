@@ -1,7 +1,7 @@
 {
 "name": "prince-ds",
-"version": "1.9.5", 
-"description": "Super Bot WhatsApp",
+"version": "2.7.5", 
+"description": "Advance Prince md WhatsApp",
 "main": "index.js",
 "type": "module",
     
@@ -10,15 +10,17 @@
 "src": "src",
 "plugins": "plugins" },
     
-"scripts": {
-  "start": "pm2 start index.js --deep-monitoring --attach --name prince-ds",
-  "stop": "pm2 stop prince-ds",
-  "restart": "pm2 restart prince-ds"
-},
+
+   "scripts": {
+"start": "node index.js",
+"qr": "node index.js qr",
+"code": "node index.js code",
+"test": "node test.js",
+"test2": "nodemon index.js" },
     
 "homepage": "https://github.com/PRINCE-GDS/prince-ds",
 "author": {
-"name": "pd427" },
+"name": "sweeto427" },
     
 "repository": {
 "type": "git",
