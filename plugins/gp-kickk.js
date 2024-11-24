@@ -20,9 +20,9 @@ let handler = async (m, { conn, participants, usedPrefix, command }) => {
     m.reply(`✅ ᴜsᴇʀ ʜᴀs ʙᴇᴇɴ ᴇʟɪᴍɪɴᴀᴛᴇᴅ ᴀɴᴅ ʜɪs ᴍᴇssᴀɢᴇ ʜᴀs ʙᴇᴇɴ ᴅᴇʟᴇᴛᴇᴅ + ʙʟᴏᴄᴋᴇᴅ ɪɴ ᴅᴍ👋🏻`);
 }
 
-handler.help = ['kick @user']
+handler.help = ['kick3 @user', 'kkk @user']
 handler.tags = ['group']
-handler.command = ['kick2', 'expulsar2', 'k2', 'kk'] 
+handler.command = ['kick3', 'expulsar3', 'k3', 'kkk'] 
 handler.admin = true
 handler.group = true
 handler.botAdmin = true
