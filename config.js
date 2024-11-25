@@ -55,6 +55,7 @@ global.baileys = '@whiskeysockets/baileys'
 global.apis = 'https://deliriussapi-oficial.vercel.app'
 global.openai_key = 'sk-...OzYy' /* Get your ApiKey at this link: https://platform.openai.com/account/api-keys */
 global.openai_org_id = 'HITjoN7H8pCwoncEB9e3fSyW'
+global.baileys = '@whiskeysockets/baileys'
 //💌------------------------------------------💌
 
 
