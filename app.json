@@ -51,6 +51,11 @@
       "required": false,
       "value": "false"
     },
+    "STATUSLIKES": {
+      "description": "Status likes true false to on off",
+      "required": false,
+      "value": "true"
+    },
     "STATUS_MSG": {
       "description": "Status reply msg",
       "required": false,
