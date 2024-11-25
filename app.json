@@ -2,7 +2,7 @@
   "name": "PRINCEMD",
   "description": "whatsapp user bot",
   "repository": "https://github.com/DASTAGHIR/PRINCEMD",
-  "logo": "https://qu.ax/qFUGN.jpg",
+  "logo": "https://qu.ax/igJFS.png",
   "success_url": "https://github.com/DASTAGHIR/PRINCEMD",
   "keywords": [
     "nodejs", "heroku", "bot", "urdu", "english", "indonesian", "arab", "portuguese", "italian", "french", "whatsapp",
@@ -12,9 +12,9 @@
   "stack": "container",
   "env": {
     "OWNERS": {
-      "description": "Put your Number as Owner",
+      "description": "put your Number as Owner",
       "required": true,
-      "value": "923092668xxx;❣️DASTAGEER"
+      "value": "923092668108;❣️DASTAGEER"
     },
     "MODE": {
       "description": "mode public or private",
@@ -22,29 +22,29 @@
       "value": "public"
     },
     "PREFIX": {
-      "description": "Put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
+      "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
       "required": false,
       "value": ""
     },
     "antidelete": {
-      "description": "BOT will forward deleted messages if you make it true",
+      "description": "bot will forward deleted messages if you make it true",
       "required": false,
-      "value": "true"
+      "value": "false"
     },
     "ANTI_LINK": {
-      "description": "Make true false to ON/OFF antilink",
+      "description": "make true false to ON/OFF antilink",
       "required": false,
-      "value": "true"
+      "value": "false"
     },
     "AUTOREAD": {
-      "description": "Make true to auto check users messages",
+      "description": "make true to auto check users messages",
       "required": false,
       "value": "false"
     },
     "VIEWONCE": {
-      "description": "Make true if wanna get view once message",
+      "description": "make true if wanna get view once message",
       "required": false,
-      "value": "true"
+      "value": "false"
     },
     "STATUS_REPLY": {
       "description": "Status reply true false to on off",
@@ -52,47 +52,42 @@
       "value": "false"
     },
     "STATUS_MSG": {
-      "description": "Status reply message",
+      "description": "Status reply msg",
       "required": false,
       "value": "Your Status has been seen by Prince bot"
     },
     "BOT_NAME": {
-      "description": "Put your BOT a name",
+      "description": "put your BOT a name",
       "required": true,
-      "value": "ᏢᎡᏆΝХᏟᎬ-ᎷᎠ-ᏔᏴ"
+      "value": "PRINCE-MD"
     },
     "PACK_NAME": {
-      "description": "Put your stickers pack name",
+      "description": "put your stickers pack name",
       "required": false,
       "value": "Princebot🎗️❣️"
-    },
-    "DATABASE_URL": {
-      "description": "Put your MongoDB here",
-      "required": false,
-      "value": ""
     },
     "DL_MSG": {
       "description": "Video downloader caption",
       "required": true,
-      "value": "📥-------- *⛲ᴘʀɪɴᴄᴇ-ᴍᴅ⛲* --------📥"
+      "value": "_📥-------- *DOWNLOADED SUCCESSFULLY* --------📥_"
     },
     "STATUSVIEW": {
-      "description": "Make it true if you want the bot to auto view status",
+      "description": "make it true to auto view status",
       "required": false,
       "value": "false"
     },
     "Status_Saver": {
-      "description": "Make it true if you want the bot to auto save your contacts status",
+      "description": "make it true to auto save your contacts status",
       "required": false,
       "value": "false"
     },
-    "ANTI_CALL": {
-      "description": "Make it true if you want bot to Block unknown callers",
+    "REJECTSCALLS": {
+      "description": "make it true to reject calls",
       "required": false,
       "value": "false"
     },
     "AutoReaction": {
-      "description": "Make it true if you want bot to react on chats",
+      "description": "make it true to react on chats",
       "required": false,
       "value": "false"
     },
