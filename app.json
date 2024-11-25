@@ -1,9 +1,9 @@
 {
-  "name": "prince-ds",
-  "description": "PRINCE MD WHATSAPP USER BOT",
-  "repository": "https://github.com/PRINCE-GDS/prince-ds",
+  "name": "PRINCEMD",
+  "description": "whatsapp user bot",
+  "repository": "https://github.com/DASTAGHIR/PRINCEMD",
   "logo": "https://qu.ax/qFUGN.jpg",
-  "success_url": "https://github.com/PRINCE-GDS/prince-ds",
+  "success_url": "https://github.com/DASTAGHIR/PRINCEMD",
   "keywords": [
     "nodejs", "heroku", "bot", "urdu", "english", "indonesian", "arab", "portuguese", "italian", "french", "whatsapp",
     "termux", "superbot", "multi-device", "md", "official", "javascript", "princebot"
