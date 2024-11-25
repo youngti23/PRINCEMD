@@ -6,14 +6,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Generate "PRINCE-WB" in Slant font with alternating colors
-figlet('PRINCE-BOT', { font: 'Slant' }, (err, data) => {
+figlet('PRINCE BOT', { font: 'Slant' }, (err, data) => {
   if (err) {
     console.error(chalk.red('Figlet error:', err));
     return;
   }
 
-  // Split the data into lines and apply colors
   const lines = data.split('\n');
   lines.forEach((line, index) => {
     
@@ -23,7 +21,7 @@ figlet('PRINCE-BOT', { font: 'Slant' }, (err, data) => {
 });
 
 
-figlet('An Advanced Whatsapp User B⭕T', {
+figlet('LOVE TO GDS', {
   horizontalLayout: 'default',
   verticalLayout: 'default',
 }, (err, data) => {
@@ -63,7 +61,7 @@ async function start(file) {
   });
 
   p.on('message', data => {
-    console.log(chalk.cyan(`✔️RECEIVED ${data}`));
+    console.log(chalk.cyan(`✅RECEIVED ${data}`));
     switch (data) {
       case 'reset':
         p.kill();
@@ -78,7 +76,7 @@ async function start(file) {
 
   p.on('exit', code => {
     isRunning = false;
-    console.error(chalk.red(`❌Exited with code: ${code}`));
+    console.error(chalk.red(`⭕Exited with code: ${code} check what you did wrong or show this screenshot to the developer for solution`));
 
     if (code === 0) return;
 
@@ -123,6 +121,6 @@ process.on('unhandledRejection', () => {
 
 process.on('exit', code => {
   console.error(chalk.red(`Exited with code: ${code}`));
-  console.error(chalk.red(`B⭕T will restart...`));
+  console.error(chalk.red(`BOT will restart...`));
   start('main.js');
 });
