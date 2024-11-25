@@ -1,7 +1,7 @@
 {
-"name": "prince-ds",
-"version": "2.7.5", 
-"description": "Advance Prince md WhatsApp",
+"name": "PRINCEMD",
+"version": "2.9.7", 
+"description": "super advance prince md whatsapp user bot",
 "main": "index.js",
 "type": "module",
     
@@ -18,17 +18,16 @@
 "test": "node test.js",
 "test2": "nodemon index.js" },
     
-"homepage": "https://github.com/PRINCE-GDS/prince-ds",
+"homepage": "https://github.com/DASTAGHIR/PRINCEMD",
 "author": {
-"name": "sweeto427" },
+"name": "dasta" },
     
 "repository": {
 "type": "git",
-"url": "git+https://github.com/PRINCE-GDS/prince-ds.git" },
+"url": "git+https://github.com/DASTAGHIR/PRINCEMD" },
 
 "bugs": {
-"url": "https://github.com/PRINCE-GDS/prince-ds/issues" },
-"license": "ISC",
+"url": "https://github.com/DASTAGHIR/PRINCEMD/issues" },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@brandond/findthelyrics": "^2.0.5",
@@ -112,9 +111,8 @@
     "wa-sticker-formatter": "^4.4.4",
     "xfarr-api": "^1.0.3",
     "yargs": "^17.3.1",
-    "yt-search": "^2.10.3"
-  },
-"optionalDependencies": {
-    "@xct007/frieren-scraper": "*",
+    "yt-search": "^2.10.3",
+    "@xct007/frieren-scraper": "^0.0.2",
     "cheerio": "npm:cheerio@1.0.0-rc.12"
-}}
+  },
+}
