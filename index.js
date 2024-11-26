@@ -1,70 +1,53 @@
-import chalk from 'chalk';
-import { spawn } from 'child_process';
-import express from 'express';
-import figlet from 'figlet';
-import fs from 'fs';
-import path from 'path';
+// Starting message at the very top
+console.log('Starting... 🚀🚀🚀');
+
+import { join, dirname } from 'path';
+import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
+import { setupMaster, fork } from 'cluster';
+import { watchFile, unwatchFile } from 'fs';
+import cfonts from 'cfonts';
+import { createInterface } from 'readline';
+import yargs from 'yargs';
 
-figlet('PRINCE BOT', { font: 'Slant' }, (err, data) => {
-  if (err) {
-    console.error(chalk.red('Figlet error:', err));
-    return;
-  }
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const require = createRequire(__dirname);
+const { name, author } = require(join(__dirname, './package.json'));
+const { say } = cfonts;
 
-  const lines = data.split('\n');
-  lines.forEach((line, index) => {
-    
-    const color = index % 2 === 0 ? chalk.red : chalk.cyan; // Choose colors as needed
-    console.log(color(line));
-  });
+// Display header with SLANT style and colors
+say('PRINCE-MD', {
+  font: 'slant', // Changed font to 'slant' for a stylish look
+  align: 'center',
+  gradient: ['cyan', 'blue'], // Cool cyan-to-blue gradient
 });
 
-
-figlet('LOVE TO GDS', {
-  horizontalLayout: 'default',
-  verticalLayout: 'default',
-}, (err, data) => {
-  if (err) {
-    console.error(chalk.red('Figlet error:', err));
-    return;
-  }
-  console.log(chalk.magenta(data));
+say(`by: DASTAGEER`, {
+  font: 'console',
+  align: 'center',
+  gradient: ['yellow', 'red'], // Yellow-to-red gradient
 });
 
-const app = express();
-const port = process.env.PORT || 5000;
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname, 'Assets')));
-
-app.get('/', (req, res) => {
-  res.redirect('/prince.html');
-});
-
-app.listen(port, () => {
-  console.log(chalk.green(`Port ${port} is open`));
-});
-
+// Start bot logic
 let isRunning = false;
 
-async function start(file) {
+function start(file) {
   if (isRunning) return;
   isRunning = true;
+  const args = [join(__dirname, file), ...process.argv.slice(2)];
 
-  const currentFilePath = new URL(import.meta.url).pathname;
-  const args = [path.join(path.dirname(currentFilePath), file), ...process.argv.slice(2)];
-  const p = spawn(process.argv[0], args, {
-    stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
+  setupMaster({
+    exec: args[0],
+    args: args.slice(1),
   });
 
-  p.on('message', data => {
-    console.log(chalk.cyan(`✅RECEIVED ${data}`));
+  const p = fork();
+
+  // Handle bot messages
+  p.on('message', (data) => {
     switch (data) {
       case 'reset':
-        p.kill();
+        p.process.kill();
         isRunning = false;
         start.apply(this, arguments);
         break;
@@ -74,53 +57,34 @@ async function start(file) {
     }
   });
 
-  p.on('exit', code => {
+  // Handle unexpected errors
+  p.on('exit', (_, code) => {
     isRunning = false;
-    console.error(chalk.red(`⭕Exited with code: ${code} check what you did wrong or show this screenshot to the developer for solution`));
-
-    if (code === 0) return;
-
-    fs.watchFile(args[0], () => {
-      fs.unwatchFile(args[0]);
-      start('main.js');
-    });
-  });
-
-  p.on('error', err => {
-    console.error(chalk.red(`Error: ${err}`));
-    p.kill();
+    console.error('⚠️ Unexpected Error ⚠️', code);
+    p.process.kill();
     isRunning = false;
-    start('main.js');
-  });
-
-  const pluginsFolder = path.join(path.dirname(currentFilePath), 'plugins');
-
-  fs.readdir(pluginsFolder, async (err, files) => {
-    if (err) {
-      console.error(chalk.red(`Error reading plugins folder: ${err}`));
-      return;
-    }
-    console.log(chalk.yellow(`Installed ${files.length} plugins`));
-
-    try {
-      const { default: baileys } = await import('@whiskeysockets/baileys');
-      const version = (await baileys.fetchLatestBaileysVersion()).version;
-      console.log(chalk.yellow(`Using Baileys version ${version}`));
-    } catch (e) {
-      console.error(chalk.red(' Baileys library is not installed'));
+    start.apply(this, arguments);
+    if (process.env.pm_id) {
+      process.exit(1);
+    } else {
+      process.exit();
     }
   });
+
+  // Parse CLI arguments
+  const opts = new Object(
+    yargs(process.argv.slice(2)).exitProcess(false).parse()
+  );
+
+  // Handle user input via readline
+  if (!opts['test']) {
+    if (!rl.listenerCount()) {
+      rl.on('line', (line) => {
+        p.emit('message', line.trim());
+      });
+    }
+  }
 }
 
+// Start the main bot file
 start('main.js');
-
-process.on('unhandledRejection', () => {
-  console.error(chalk.red(`Unhandled promise rejection. Bot will restart...`));
-  start('main.js');
-});
-
-process.on('exit', code => {
-  console.error(chalk.red(`Exited with code: ${code}`));
-  console.error(chalk.red(`BOT will restart...`));
-  start('main.js');
-});
