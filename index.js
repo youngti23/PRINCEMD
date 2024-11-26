@@ -12,12 +12,13 @@ import path from 'path';
 import os from 'os';
 import { promises as fsPromises } from 'fs';
 
-// Create an Express HTTP server
-const app = express()
-const port = process.env.PORT || 5000
-
+// Set up __dirname and __filename
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
+
+// Create an Express HTTP server
+const app = express();
+const port = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, 'Assets')));
 
@@ -26,11 +27,10 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(chalk.green(`Port ${port} is open`))
-})
+  console.log(chalk.green(`🌐 Server is running on port ${port}`));
+});
 
 // Core bot startup logic
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(__dirname);
 const { name, author } = require(join(__dirname, './package.json'));
 const { say } = cfonts;
