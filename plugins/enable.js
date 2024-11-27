@@ -362,20 +362,20 @@ break
     case 'onlypv':
     case 'onlydm':
     case 'onlymd':
-    case 'solopv':
+    case 'pconly':
       isAll = true
       if (!isOwner) {
         global.dfail('owner', m, conn)
         throw false
       }
       //global.opts['solopv'] = isEnable
-      bot.solopv = isEnable
+      bot.pconly = isEnable
       break
       
     case 'gponly':
     case 'onlygp':
     case 'grouponly':
-    case 'sologp':
+    case 'gconly':
     case 'sologrupo':
       isAll = true
       if (!isOwner) {
@@ -383,7 +383,7 @@ break
         throw false
       }
       //global.opts['sologp'] = isEnable
-      bot.sologp = isEnable
+      bot.gconly = isEnable
       break
 
 
