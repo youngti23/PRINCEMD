@@ -224,16 +224,16 @@ chatbot: false
         }
         if (opts["nyimak"]) return
 	if (!m.fromMe && opts['self'])  return
-	if (settings.solopv && m.chat.endsWith('g.us')) return  
-        if (settings.sologp && !m.chat.endsWith('g.us')) return
+        if (opts["pconly"] && m.chat.endsWith("g.us")) return
+        if (opts["gconly"] && !m.chat.endsWith("g.us")) return 
         if (opts["swonly"] && m.chat !== "status@broadcast") return
         if (typeof m.text !== "string")
             m.text = ""
 
 
-	    
-        //if (opts["pconly"] && m.chat.endsWith("g.us")) return
-        //if (opts["gconly"] && !m.chat.endsWith("g.us")) return
+        //if (settings.solopv && m.chat.endsWith('g.us')) return  
+       // if (settings.sologp && !m.chat.endsWith('g.us')) return 
+        
 	//if (m.chat !== '120363032639627036@g.us') return
        // if (m.chat === '120363032639627036@g.us' && m.sender !== '923092668108@s.whatsapp.net') return;
 
