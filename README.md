@@ -13,7 +13,7 @@
             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.3)';"
         >
     </a>
-    <p style="margin-top: 10px; font-size: 18px; color: #333;">Click to learn more about PRINCE</p>
+    <p style="margin-top: 10px; font-size: 18px; color: #333;">𝙅𝘼𝙕𝘼𝙆𝘼𝙇𝙇𝘼𝙃 𝙏𝙊 𝘿𝘼𝙎𝙏𝘼𝙂𝙀𝙀𝙍 𝙁𝙊𝙍 𝙏𝙃𝙄𝙎 𝘽𝙊𝙏</p>
 </div>
 
 
@@ -37,32 +37,32 @@
     </a>
 </div>
 
-<h1 align="center" style="font-family: 'Arial', sans-serif; color: #1a73e8;"> 🪄🐬𝑷𝑹𝑰𝑵𝑪𝑬-𝑴𝑫-𝑩𝑶𝑻🪄🐬</h1>
+<h1 align="center" style="font-family: 'Arial', sans-serif; color: #1a73e8;">𝑷𝑹𝑰𝑵𝑪𝑬-𝑴𝑫-𝑩𝑶𝑻</h1>
 
 <div align="center">
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
     <a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 </div>
 
-<div align="center">
+<div align="left">
     
-   ### 𝘾𝙇𝙄𝘾𝙆 𝘼𝙉𝘿 𝙒𝘼𝙄𝙏 𝙏𝙊 𝙊𝙋𝙀𝙉 𝙏𝙃𝙀 𝙎𝙄𝙏𝙀📳
+   ### 🟢🟣🔵 𝘾𝙇𝙄𝘾𝙆 𝘼𝙉𝘿 𝙒𝘼𝙄𝙏 𝙏𝙊 𝙊𝙋𝙀𝙉 𝙏𝙃𝙀 𝙎𝙄𝙏𝙀📳
    <br>
     <br>
 </div>
 <br>
 
-<div align="center">
+<div align="left">
     
-   ### SHORT SESSION FOR HEROKU  
-   <h3 style="color: #430098;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h3>
+ ### 🟣 𝙎𝙃𝙊𝙍𝙏 𝙎𝙀𝙎𝙎𝙄𝙊𝙉 𝙁𝙊𝙍 𝙃𝙀𝙍𝙊𝙆𝙐
+   <h3 style="color: #430098;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀1️⃣</h3>
     <a href="https://short-pair-for-heorku.onrender.com">
         <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-purple?style=for-the-badge&logo=heroku&logoColor=white">
     </a>
 </div>
 <br>
-<div align="center">
-    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h3>
+<div align="left">
+    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀2️⃣</h3>
     <a href="https://embarrassed-corliss-secktor-ead5ff5a.koyeb.app/">
         <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-red?style=for-the-badge&logo=heroku&logoColor=white">
     </a>
@@ -70,19 +70,19 @@
 </div>
 <br>
 <br>
-<div align="center">
+<div align="left">
        
-   ### LONG SESSION FOR PANELS AND ALL PLATFORMS
+ ### 🔵 𝙇𝙊𝙉𝙂 𝙎𝙀𝙎𝙎𝙄𝙊𝙉 𝙁𝙊𝙍 𝙋𝘼𝙉𝙀𝙇𝙎 𝘼𝙉𝘿 𝘼𝙇𝙇 𝙋𝙇𝘼𝙏𝙁𝙊𝙍𝙈𝙎
    
 </div>
    
-<div align="center">
-    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀 1</h3>
+<div align="left">
+    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀1️⃣</h3>
     <a href="https://prince-new-base64-pair.onrender.com">
         <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-skyblue?style=for-the-badge&logo=render">
     </a>
     <br>
-    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 QR 𝘾𝙊𝘿𝙀 2</h3>
+    <h3 style="color: #34a853;">𝙋𝘼𝙄𝙍 𝙌𝙍 𝘾𝙊𝘿𝙀2️⃣</h3>
     <a href="https://prince-session-base64.onrender.com">
         <img height="30" title="Session" src="https://img.shields.io/badge/𝗦𝗘𝗦𝗦𝗜𝗢𝗡-green?style=for-the-badge&logo=render">
     </a>
@@ -95,10 +95,10 @@
 
 <div align="center">
     
-### Deploy Options
+### 𝘿𝙀𝙋𝙇𝙊𝙔𝙈𝙀𝙉𝙏 𝙊𝙋𝙏𝙄𝙊𝙉𝙎
 </div>
 <div align="center">
-    <a href="https://dashboard.heroku.com/new-app?template=https://github.com/DASTAGHIR/PRINCEMD">
+    <a href="https://gd-sdeploy.vercel.app/">
         <img height="30" title="Heroku" src="https://img.shields.io/badge/𝗛𝗘𝗥𝗢𝗞𝗨-9966CC?style=for-the-badge&logo=render">
     </a>
     <a href="https://repl.it/github/DASTAGHIR/PRINCEMD">
@@ -111,12 +111,12 @@
 
 <div align="center">
     
-### Run on Koyeb
+### 𝙍𝙐𝙉 𝙊𝙉 𝙆𝙊𝙔𝙀𝘽
 
 <div align="center">
     <p align="center">
         <a href="https://app.koyeb.com/deploy?type=git&repository=https://github.com/DASTAGHIR/PRINCEMD&branch=main&name=princegds&builder=dockerfile&env[OWNERS]=923092668108%3B%E2%9D%A3%EF%B8%8FDASTAGEER&env[MODE]=public&env[PREFIX]=&env[antidelete]=false&env[ANTI_LINK]=false&env[AUTOREAD]=false&env[VIEWONCE]=false&env[STATUS_REPLY]=false&env[STATUSLIKES]=true&env[STATUS_MSG]=Your+Status+has+been+seen+by+Prince+bot&env[BOT_NAME]=PRINCE-MD&env[PACK_NAME]=Princebot%F0%9F%8E%97%EF%B8%8F%E2%9D%A3%EF%B8%8F&env[DL_MSG]=_📥--------+*DOWNLOADED+SUCCESSFULLY*+--------📥_&env[STATUSVIEW]=false&env[Status_Saver]=false&env[REJECTSCALLS]=false&env[AutoReaction]=false&env[SESSION_ID]=">
-            <img src="https://www.koyeb.com/static/images/deploy/button.svg" height="30"/>
+            <img src="https://www.koyeb.com/static/images/deploy/button.svg" height="45"/>
         </a>
     </p>
 </div>
