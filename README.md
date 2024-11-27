@@ -113,13 +113,13 @@
     
 ### Run on Koyeb
 
+<div align="center">
+    <p align="center">
+        <a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FDASTAGHIR%2FPRINCEMD&branch=main&name=princegds&builder=dockerfile&env[OWNERS]=923092668108%3B%F0%9F%92%A3DASTAGEER&env[MODE]=public&env[PREFIX]=&env[antidelete]=false&env[ANTI_LINK]=false&env[AUTOREAD]=false&env[VIEWONCE]=false&env[STATUS_REPLY]=false&env[STATUSLIKES]=true&env[STATUS_MSG]=Your+Status+has+been+seen+by+Prince+bot&env[BOT_NAME]=PRINCE-MD&env[PACK_NAME]=Princebot%F0%9F%8E%97%EF%B8%8F%E2%9D%A3%EF%B8%8F&env[DL_MSG]=_📥--------+*DOWNLOADED+SUCCESSFULLY*+--------📥_&env[STATUSVIEW]=false&env[Status_Saver]=false&env[REJECTSCALLS]=false&env[AutoReaction]=false&env[SESSION_ID]=">
+            <img src="https://www.koyeb.com/static/images/deploy/button.svg" height="30"/>
+        </a>
+    </p>
 </div>
-    
-<p align="center">
-    <a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FDASTAGHIR%2FPRINCEMD&branch=main&nameprincegds&builder=dockerfile&env[DATABASE_URL]=&env[SESSION_ID]=your+sessionid+here&env[MODE]=public&env=[autoRead]=false&env[statusview]=false&env[REMOVEBG_KEY]=your+rmbg+key&env[antidelete]=false">
-        <img src="https://www.koyeb.com/static/images/deploy/button.svg" height="30"/>
-    </a>
-</p>
 
 <div align="center">
     
