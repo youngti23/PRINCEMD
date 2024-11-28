@@ -86,7 +86,7 @@ async function start(file) {
   p.on('exit', (_, code) => {
     isRunning = false;
     console.error('⚠️ ERROR ⚠️ >> ', code);
-    start('main.js'); //
+  //  start('main.js'); //
 
     if (code === 0) return;
     watchFile(args[0], () => {
