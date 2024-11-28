@@ -206,8 +206,8 @@ chatbot: false
 	       // if (!('anticall' in settings)) settings.antiCall = false
                 if (!("restartDB" in settings)) settings.restartDB = 0
                 if (!("status" in settings)) settings.status = 0
-		if (!('pconly' in settings)) settings.pconly = false // The bot responds only for dm
-                if (!('gconly' in settings)) settings.gconly = false // The bot responds only in groups
+		///if (!('pconly' in settings)) settings.pconly = false // The bot responds only for dm
+                //if (!('gconly' in settings)) settings.gconly = false // The bot responds only in groups
 
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
@@ -224,15 +224,15 @@ chatbot: false
         }
         if (opts["nyimak"]) return
 	if (!m.fromMe && opts['self'])  return
-        //if (opts["pconly"] && m.chat.endsWith("g.us")) return
-        //if (opts["gconly"] && !m.chat.endsWith("g.us")) return 
+        if (opts["pconly"] && m.chat.endsWith("g.us")) return
+        if (opts["gconly"] && !m.chat.endsWith("g.us")) return 
         if (opts["swonly"] && m.chat !== "status@broadcast") return
         if (typeof m.text !== "string")
             m.text = ""
 
 
-        if (settings.pconly && m.chat.endsWith('g.us')) return  
-       if (settings.gconly && !m.chat.endsWith('g.us')) return 
+       // if (settings.pconly && m.chat.endsWith('g.us')) return  
+      // if (settings.gconly && !m.chat.endsWith('g.us')) return 
         
 	//if (m.chat !== '120363032639627036@g.us') return
        // if (m.chat === '120363032639627036@g.us' && m.sender !== '923092668108@s.whatsapp.net') return;
