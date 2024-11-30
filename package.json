@@ -106,7 +106,6 @@
     "url-regex-safe": "^3.0.0",
     "undici": "^6.19.4",
     "javascript-obfuscator": "^4.0.0",
-    "vosk": "^0.3.39",
     "wa-sticker-formatter": "^4.4.4",
     "xfarr-api": "^1.0.3",
     "yargs": "^17.3.1",
