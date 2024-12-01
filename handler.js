@@ -561,36 +561,29 @@ if (process.env.AUTOREAD === 'true') {
     }
 }
 	    
-if (typeof process.env.STATUSVIEW === 'undefined' || process.env.STATUSVIEW.toLowerCase() === 'false') return;
-if (m.key.remoteJid === 'status@broadcast')
-	await conn.readMessages([m.key])
-//if (settingsREAD.autoread2) await this.readMessages([m.key])  
-//if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key]) 
- 
-    }
-	    
 
-/*if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
-if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
-let emot = pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "👑", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"])
-this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
-function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}*/
+
+ // STATUSVIEW logic (above AutoReaction)
+if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') {
+    if (m.key.remoteJid === 'status@broadcast') {
+        console.log("STATUSVIEW enabled: Reading status message.");
+        await conn.readMessages([m.key]);
+    }
+}
+
+// AutoReaction logic (independent of STATUSVIEW)
 if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') {
     console.log("AutoReaction is disabled.");
     return;
 }
 
-console.log("Message received:", m.text); // Debugging the message text
-
 if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
     let emot;
 
-    // Debugging sender format
-    console.log("Sender ID:", m.sender);
-
+    // Check for specific sender
     if (m.sender === '923092668108@s.whatsapp.net') {
         console.log("Matched specific sender. Reacting with 👑.");
-        emot = "👑";
+        emot = "👑"; // Specific emoji for the given number
     } else {
         console.log("Matched general sender. Reacting with random emoji.");
         emot = pickRandom([
@@ -611,15 +604,13 @@ if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|a
 
 function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)];
-}
-	    
- 
+} 
 
 
 
 
 
-}
+}}
     
             
 
