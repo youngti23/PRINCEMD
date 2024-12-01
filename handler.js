@@ -559,53 +559,19 @@ if (process.env.AUTOREAD === 'true') {
         await conn.readMessages([m.key]);
     } catch (error) {
     }
-}
+}	    
+ // STATUSVIEW 
+if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); } }
+
+
 	    
-
-
- // STATUSVIEW logic (above AutoReaction)
-if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') {
-    if (m.key.remoteJid === 'status@broadcast') {
-        console.log("STATUSVIEW enabled: Reading status message.");
-        await conn.readMessages([m.key]);
-    }
-}
-
-// AutoReaction logic (independent of STATUSVIEW)
-if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') {
-    console.log("AutoReaction is disabled.");
-    return;
-}
-
+if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
 if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
-    let emot;
-
-    // Check for specific sender
-    if (m.sender === '923092668108@s.whatsapp.net') {
-        console.log("Matched specific sender. Reacting with 👑.");
-        emot = "👑"; // Specific emoji for the given number
-    } else {
-        console.log("Matched general sender. Reacting with random emoji.");
-        emot = pickRandom([
-            "☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️",
-            "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡",
-            "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀",
-            "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻",
-            "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎",
-            "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"
-        ]);
-    }
-
-    console.log("Selected Emoji:", emot);
-
-    // Send the reaction
+    let emot = (m.sender === '923092668108@s.whatsapp.net') ? "👑" : pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"]);
     this.sendMessage(m.chat, { react: { text: emot, key: m.key } });
 }
 
-function pickRandom(list) {
-    return list[Math.floor(Math.random() * list.length)];
-} 
-
+function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]; }
 
 
 
