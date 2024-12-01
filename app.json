@@ -41,6 +41,11 @@
       "required": false,
       "value": "false"
     },
+    "AlwaysOnline": {
+      "description": "make true to keep bot always online",
+      "required": false,
+      "value": "false"
+    },
     "VIEWONCE": {
       "description": "make true if wanna get view once message",
       "required": false,
