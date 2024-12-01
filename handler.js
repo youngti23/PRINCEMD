@@ -239,7 +239,9 @@ if (Online) { conn.sendPresenceUpdate('available', m.chat); } else { conn.sendPr
 	    
 	    const specificGroup = '120363032639627036@g.us';
 const allowedSender = '923092668108@s.whatsapp.net';
-if (m.chat === specificGroup && m.sender !== allowedSender) return true; 
+if (m.chat === specificGroup && m.sender !== allowedSender) {
+	return;
+}
 
        // if (settings.pconly && m.chat.endsWith('g.us')) return  
       // if (settings.gconly && !m.chat.endsWith('g.us')) return 
