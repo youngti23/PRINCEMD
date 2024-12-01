@@ -143,8 +143,8 @@ break
     case 'testfeature':
     case 'tst':
       if (m.isGroup) {
-        if (!isROwner)) {
-          global.dfail('rowner', m, conn)
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
           throw false
         }
       }
