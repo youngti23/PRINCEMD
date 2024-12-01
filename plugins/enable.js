@@ -139,16 +139,29 @@ break
       break
 
 		  
-    case 'antilink':
-    case 'antilinkwa':
-    case 'antilinkwha':
+    case 'testf':
+    case 'testfeature':
+    case 'tst':
+      if (m.isGroup) {
+        if (!isROwner)) {
+          global.dfail('rowner', m, conn)
+          throw false
+        }
+      }
+      chat.testf = isEnable
+      break
+		  
+
+		  case 'anticmds':
+    case 'anticommands':
+    case 'blockcmds':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.antiLink = isEnable
+      chat.anticmds = isEnable
       break
 
 
@@ -436,6 +449,9 @@ break
 
 ⚙️⛊ *${usedPrefix}antispam*
 > bot will detect spammers 
+
+⚙️⛊ *${usedPrefix}anticmds*
+> bot will remove command users
 
 ⚙️⛊ *${usedPrefix}antilinkall*
 > bot will detect all links
