@@ -126,6 +126,8 @@ if (!("antiDelete" in chat)) chat.antiDelete = true
 if (!("antiSticker" in chat)) chat.antiSticker = false
 if (!("antiToxic" in chat)) chat.antiToxic = false
 if (!('antiver' in chat)) chat.antiver = false 
+if (!('anticmds' in chat)) chat.anticmds = false
+if (!('testf' in chat)) chat.testf = false		    
 if (!('antiPorn' in chat)) chat.antiPorn = true         
 if (!('antiLink2' in chat)) chat.antiLink2 = false
 if (!('antiTiktok' in chat)) chat.antiTiktok = false
@@ -164,7 +166,9 @@ antiSticker: false,
 antiToxic: false,
 antiver: true,
 antiPorn: true,
+anticmds: false,
 antiLink2: false,
+testf: false,
 antiTiktok: false,
 antiYoutube: false,
 antiTelegram: false,
