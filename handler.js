@@ -570,12 +570,18 @@ if (m.key.remoteJid === 'status@broadcast')
     }
 	    
 
-if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
+/*if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
 if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
 let emot = pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "👑", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
-function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
-
+function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}*/
+if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
+if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
+    let emot;
+    if (m.sender === '923092668108@s.whatsapp.net') {
+        emot = "👑";  } else {  emot = pickRandom([ "☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"
+        ]);}  this.sendMessage(m.chat, { react: { text: emot, key: m.key } });} function pickRandom(list) { return list[Math.floor(Math.random() * list.length)];
+	    } 
 	    
     }
     
