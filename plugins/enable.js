@@ -152,7 +152,7 @@ break
       break
 		  
 
-		  case 'anticmds':
+		  case 'nocmds':
     case 'anticommands':
     case 'blockcmds':
       if (m.isGroup) {
@@ -450,7 +450,7 @@ break
 ⚙️⛊ *${usedPrefix}antispam*
 > bot will detect spammers 
 
-⚙️⛊ *${usedPrefix}anticmds*
+⚙️⛊ *${usedPrefix}nocmds*
 > bot will remove command users
 
 ⚙️⛊ *${usedPrefix}antilinkall*
