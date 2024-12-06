@@ -102,7 +102,7 @@ async function start(file) {
   try {
     const packageJsonData = await fsPromises.readFile(packageJsonPath, 'utf-8');
     const packageJsonObj = JSON.parse(packageJsonData);
-    const currentTime = const currentTime = new Intl.DateTimeFormat('en-US', {
+    const currentTime = new Intl.DateTimeFormat('en-US', {
   timeZone: 'Asia/Karachi',
   dateStyle: 'full',
   timeStyle: 'long',
