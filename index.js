@@ -102,7 +102,11 @@ async function start(file) {
   try {
     const packageJsonData = await fsPromises.readFile(packageJsonPath, 'utf-8');
     const packageJsonObj = JSON.parse(packageJsonData);
-    const currentTime = new Date().toLocaleString();
+    const currentTime = const currentTime = new Intl.DateTimeFormat('en-US', {
+  timeZone: 'Asia/Karachi',
+  dateStyle: 'full',
+  timeStyle: 'long',
+}).format(new Date()); //new Date().toLocaleString();
 
     let lineM = '⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ ⋯ 》';
     console.log(
@@ -113,9 +117,9 @@ async function start(file) {
 ┊${chalk.blueBright('┊')}${chalk.yellow(`💽 Free RAM: ${freeRamInGB.toFixed(2)} GB`)}
 ┊${chalk.blueBright('╰┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
 ┊${chalk.blueBright('╭┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')}
-┊${chalk.blueBright('┊')} ${chalk.blue.bold(`🟢INFORMACIÓN :`)}
+┊${chalk.blueBright('┊')} ${chalk.blue.bold(`🟢INFORMATION:`)}
 ┊${chalk.blueBright('┊')} ${chalk.blueBright('┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅')} 
-┊${chalk.blueBright('┊')}${chalk.cyan(`💚 Number: ${packageJsonObj.name}`)}
+┊${chalk.blueBright('┊')}${chalk.cyan(`💚 Name: ${packageJsonObj.name}`)}
 ┊${chalk.blueBright('┊')}${chalk.cyan(`💫 Version: ${packageJsonObj.version}`)}
 ┊${chalk.blueBright('┊')}${chalk.cyan(`💜 Description: ${packageJsonObj.description}`)}
 ┊${chalk.blueBright('┊')}${chalk.cyan(`💎 Project Author: ${packageJsonObj.author.name} (Prince❣️)`)}
