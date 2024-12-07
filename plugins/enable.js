@@ -45,6 +45,8 @@ throw false
 }
 bot.pmblocker = isEnable
 break	  
+
+		  
 		  case 'testbb':
 	case 'testb':
 isAll = true
@@ -54,6 +56,19 @@ throw false
 }
 bot.testbot = isEnable
 break	  
+
+
+case 'antipmspam':
+	case 'pmspam':
+		  case 'spampm':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.pmspam = isEnable
+break	  
+		  
 
 	  
  case 'autobio':
@@ -422,6 +437,9 @@ break
 
 ⚙️⛊ *${usedPrefix}pmblocker*
 > auto inbox blocker 
+
+⚙️⛊ *${usedPrefix}antipmspam*
+> auto virus sender blocker 
 
 ⚙️⛊ *${usedPrefix}onlydm*
 > bot will only work in inbox
