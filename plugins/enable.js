@@ -45,6 +45,15 @@ throw false
 }
 bot.pmblocker = isEnable
 break	  
+		  case 'testbb':
+	case 'testb':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.testbot = isEnable
+break	  
 
 	  
  case 'autobio':
