@@ -547,7 +547,7 @@ default:
 `)
       throw false
 
-		  
+}		  
 
 m.reply(`
 ✅ *${type.toUpperCase()}* *${isEnable ? `${mssg.nable}` : `${mssg.disable}`}* ${isAll ? `${mssg.toBot}` : isUser ? '' : `${mssg.toGp}`}
