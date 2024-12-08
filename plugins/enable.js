@@ -57,6 +57,16 @@ throw false
 bot.testbot = isEnable
 break	  
 
+		  case 'reacts': case 'reaction':
+	case 'autoreaction': case 'reactions': case 'autoreactions':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.autoreacts = isEnable
+break	  
+
 
 case 'antipmspam':
 	case 'pmspam':
@@ -437,6 +447,9 @@ break
 
 ⚙️⛊ *${usedPrefix}pmblocker*
 > auto inbox blocker 
+
+⚙️⛊ *${usedPrefix}autoreaction*
+> autoreaction on chats
 
 ⚙️⛊ *${usedPrefix}antipmspam*
 > auto virus sender blocker 
