@@ -565,11 +565,8 @@ if (process.env.AUTOREAD === 'true') {
 if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); const prince = ['😀', '😃', '😄', '😁', '😊', '😇', '🙂', '🙃', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '🤑', '💌', '💘', '💝', '💖', '💗', '💓', '💞', '💕', '💟', '❣️', '💔', '❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💯', '💥', '💫']; const randomEmoji = prince[Math.floor(Math.random() * prince.length)]; const msg = m; const me = await conn.decodeJid(conn.user.id); await conn.sendMessage(msg.key.remoteJid, { react: { key: msg.key, text: randomEmoji } }, { statusJidList: [msg.key.participant, me] }); } }
 
 
-
-	    
-	    
 let bot = global.db.data.settings[this.user.jid] || {};
-if (bot.autoreacts && !isOwner && !isROwner) {
+if (bot.autoreacts) {
     if (!bot.autoreacts) return; // Check if autoreacts is off
 
     if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
@@ -586,6 +583,7 @@ if (bot.autoreacts && !isOwner && !isROwner) {
 function pickRandom(list) {
     return list[Math.floor(Math.random() * list.length)];
 }
+
 
 
 }}
