@@ -568,14 +568,24 @@ if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLo
 
 	    
 	    
-if (typeof process.env.AutoReaction === 'undefined' || process.env.AutoReaction.toLowerCase() === 'false') return;
-if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
-    let emot = (m.sender === '923092668108@s.whatsapp.net') ? "👑" : pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"]);
-    this.sendMessage(m.chat, { react: { text: emot, key: m.key } });
+let bot = global.db.data.settings[this.user.jid] || {};
+if (bot.autoreacts && !isOwner && !isROwner) {
+    if (!bot.autoreacts) return; // Check if autoreacts is off
+
+    if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) {
+        let emot = (m.sender === '923092668108@s.whatsapp.net') ? "👑" : pickRandom([
+            "☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", 
+            "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", 
+            "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", 
+            "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "😶"
+        ]);
+        this.sendMessage(m.chat, { react: { text: emot, key: m.key } });
+    }
 }
 
-function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]; }
-
+function pickRandom(list) {
+    return list[Math.floor(Math.random() * list.length)];
+}
 
 
 }}
