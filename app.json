@@ -96,11 +96,6 @@
       "required": false,
       "value": "false"
     },
-    "AutoReaction": {
-      "description": "make it true to react on chats",
-      "required": false,
-      "value": "false"
-    },
     "SESSION_ID": {
       "description": "put your session ID here in the box below",
       "required": true,
