@@ -55,7 +55,18 @@ global.dfail('rowner', m, conn)
 throw false
 }
 bot.testbot = isEnable
-break	  
+break	
+
+
+		  case 'autoread': case 'autovisto':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.autoread2 = isEnable    
+global.opts['autoread'] = isEnable  
+break
 
 
 		  case 'antiviewonce':
@@ -460,8 +471,11 @@ default:
 🚫 *\`${usedPrefix}pmblocker\`*  
    ➤ Block spam messages in inbox
 
-💬 *\`${usedPrefix}autoreaction\`*  
+💫 *\`${usedPrefix}autoreaction\`*  
    ➤ Enable auto-reactions to chats
+
+💬 *\`${usedPrefix}autoread\`*  
+   ➤ Enable auto-reard chats
 
 📞 *\`${usedPrefix}anticall\`*  
    ➤ Enable to rejects calls
