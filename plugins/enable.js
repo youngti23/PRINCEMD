@@ -58,14 +58,13 @@ bot.testbot = isEnable
 break	
 
 
-		  case 'autoread': case 'autovisto':
+		  case 'autoread': case 'read':
 isAll = true
 if (!isROwner) {
 global.dfail('rowner', m, conn)
 throw false
 }
-bot.autoread2 = isEnable    
-global.opts['autoread'] = isEnable  
+bot.autoread = isEnable      
 break
 
 
