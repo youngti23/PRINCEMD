@@ -463,6 +463,9 @@ default:
 💬 *\`${usedPrefix}autoreaction\`*  
    ➤ Enable auto-reactions to chats
 
+📞 *\`${usedPrefix}anticall\`*  
+   ➤ Enable to rejects calls
+
 👀 *\`${usedPrefix}antiviewonce\`*  
    ➤ Enable viewonce to bot
 
