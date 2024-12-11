@@ -556,6 +556,8 @@ if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
 } catch (e) {
 console.log(m, m.quoted, e)}
 let settingsREAD = global.db.data.settings[this.user.jid] || {} 
+if (opts['autoread']) await this.readMessages([m.key])
+if (settingsREAD.autoread2) await this.readMessages([m.key])  
 /*if (process.env.AUTOREAD === 'true') {
     try {
         await conn.readMessages([m.key]);
