@@ -11,7 +11,7 @@
   "image": "heroku/nodejs",
   "stack": "container",
   "env": {
-    "OWNERS": {
+    "OWNER_NUMBER": {
       "description": "put your Number as Owner",
       "required": true,
       "value": "923092668108;❣️DASTAGEER"
