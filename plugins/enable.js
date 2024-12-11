@@ -57,6 +57,18 @@ throw false
 bot.testbot = isEnable
 break	  
 
+
+		  case 'antiviewonce':
+	case 'viewonce':
+		  case 'vv':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.viewonce = isEnable
+break	  
+
 		  case 'reacts': case 'reaction':
 	case 'autoreaction': case 'reactions': case 'autoreactions':
 isAll = true
@@ -450,6 +462,9 @@ default:
 
 💬 *\`${usedPrefix}autoreaction\`*  
    ➤ Enable auto-reactions to chats
+
+👀 *\`${usedPrefix}antiviewonce\`*  
+   ➤ Enable viewonce to bot
 
 🦠 *\`${usedPrefix}antipmspam\`*  
    ➤ Block spam and viruses in PMs
