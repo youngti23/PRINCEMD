@@ -40,21 +40,13 @@
       "description": "make true false to ON/OFF antilink",
       "required": false,
       "value": "false"
-    },
-    "AUTOREAD": {
-      "description": "make true to auto check users messages",
-      "required": false,
-      "value": "false"
+    
     },
     "AlwaysOnline": {
       "description": "make true to keep bot always online",
       "required": false,
       "value": "false"
-    },
-    "VIEWONCE": {
-      "description": "make true if wanna get view once message",
-      "required": false,
-      "value": "false"
+    
     },
     "STATUS_REPLY": {
       "description": "Status reply true false to on off",
@@ -88,11 +80,6 @@
     },
     "Status_Saver": {
       "description": "make it true to auto save your contacts status",
-      "required": false,
-      "value": "false"
-    },
-    "REJECTSCALLS": {
-      "description": "make it true to reject calls",
       "required": false,
       "value": "false"
     },
