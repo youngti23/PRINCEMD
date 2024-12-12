@@ -63,6 +63,11 @@
       "required": true,
       "value": "PRINCE-MD"
     },
+    "CallMSG": {
+      "description": "calls rejects message",
+      "required": false,
+      "value": ""
+    },
     "PACK_NAME": {
       "description": "put your stickers pack name",
       "required": false,
