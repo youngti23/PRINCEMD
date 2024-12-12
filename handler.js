@@ -806,28 +806,6 @@ export async function groupsUpdate(groupsUpdate) {
 
 /*Antcall*/
 
-export async function callUpdate(callUpdate) {
-  // Check if the anti-call feature is enabled
-  let isAnticall = global.db.data.settings[this.user.jid]?.anticalls;
-  if (!isAnticall) return;
-
-  for (let nk of callUpdate) {
-    // Skip group calls and only handle individual calls
-    if (nk.isGroup === false) {
-      if (nk.status === "offer") {
-        // Fallback message if process.env.CallMSG is not defined
-        let callmsg = await this.sendMessage(nk.from, {
-          text: process.env.CallMSG || "*`ANTICALL IS ACTIVATED`*\n*`THAT'S WHY DON'T DISTURB ME BY CALLING AGAIN AND AGAIN`*\n*`HERE IS MY BOT OWNER`*\n\nᴘʀɪɴᴄᴇ ᴍᴅ",
-          mentions: [nk.from],
-        });
-
-        // Send owner's contact and reject the call
-        await this.sendContact(nk.from, global.owner, callmsg);
-        await this.rejectCall(nk.id, nk.from);
-      }
-    }
-  }
-}
 
 
 /**
