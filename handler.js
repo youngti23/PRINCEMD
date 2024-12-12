@@ -208,7 +208,7 @@ chatbot: false
                 if (!("autoread" in settings)) settings.autoread = false
                 if (!("autoread2" in settings)) settings.autoread2 = false
                 if (!("restrict" in settings)) settings.restrict = false
-	       // if (!('anticall' in settings)) settings.antiCall = false
+	        if (!('antiCall' in settings)) settings.antiCall = false
                 if (!("restartDB" in settings)) settings.restartDB = 0
                 if (!("status" in settings)) settings.status = 0
 		///if (!('pconly' in settings)) settings.pconly = false // The bot responds only for dm
@@ -219,7 +219,7 @@ chatbot: false
                 autoread: false,
 		    autoread2: false,
                 restrict: false,
-	   //     antiCall: false,
+	       antiCall: false,
                 restartDB: 0,
 		solopv: false, 
                 sologp: false,
