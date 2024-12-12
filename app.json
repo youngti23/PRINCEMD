@@ -63,10 +63,10 @@
       "required": true,
       "value": "PRINCE-MD"
     },
-    "CallMSG": {
-      "description": "type msg for call rejects leave empty for default msg",
+    "REJECTSCALLS": {
+      "description": "reject calls",
       "required": false,
-      "value": ""
+      "value": "true"
     },
     "PACK_NAME": {
       "description": "put your stickers pack name",
