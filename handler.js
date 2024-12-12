@@ -808,7 +808,7 @@ export async function groupsUpdate(groupsUpdate) {
 
 export async function callUpdate(callUpdate) {
   // Check if the anti-call feature is enabled
-  let isAnticall = global.db.data.settings[this.user.jid].anticalls;
+  let isAnticall = global.db.data.settings[this.user.jid]?.anticalls;
   if (!isAnticall) return;
 
   for (let nk of callUpdate) {
