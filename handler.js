@@ -208,18 +208,18 @@ chatbot: false
                 if (!("autoread" in settings)) settings.autoread = false
                 if (!("autoread2" in settings)) settings.autoread2 = false
                 if (!("restrict" in settings)) settings.restrict = false
-	        if (!('antiCall' in settings)) settings.antiCall = false
+	     // if (!('antiCall' in settings)) settings.antiCall = false
                 if (!("restartDB" in settings)) settings.restartDB = 0
                 if (!("status" in settings)) settings.status = 0
-		///if (!('pconly' in settings)) settings.pconly = false // The bot responds only for dm
-                //if (!('gconly' in settings)) settings.gconly = false // The bot responds only in groups
+	     //if (!('pconly' in settings)) settings.pconly = false // The bot responds only for dm
+              //if (!('gconly' in settings)) settings.gconly = false // The bot responds only in groups
 
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
                 autoread: false,
-		    autoread2: false,
+		autoread2: false,
                 restrict: false,
-	       antiCall: false,
+	     // antiCall: false,
                 restartDB: 0,
 		solopv: false, 
                 sologp: false,
