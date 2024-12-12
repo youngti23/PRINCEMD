@@ -6,26 +6,8 @@ import cheerio from 'cheerio'
 import fetch from 'node-fetch'
 import axios from 'axios'
 import moment from 'moment-timezone' 
-
 import dotenv from 'dotenv'
-dotenv.config()
 
-const ownervb = process.env.OWNER_NUMBER;
-if (!ownervb){
-   throw new Error("OWNERS env is not set");
-}
-
-const ownerlist = ownervb.split(';');
-
-global.owner = [];
-for (let i = 0; i < ownerlist.length; i += 2) {
-    const owner = [
-        ownerlist[i],            
-        ownerlist[i + 1],         
-        true                        
-    ];
-    global.owner.push(owner);
-}
 
 //💌------------------------------------------💌
 
@@ -114,31 +96,22 @@ global.APIKeys = {
 
 
 // Bot Images 
-global.imagen1 = fs.readFileSync("./Assets/menus/Menu.png")
-global.imagen2 = fs.readFileSync("./Assets/menus/Menu1.jpg")
-global.imagen3 = fs.readFileSync("./Assets/menus/Menu2.jpg")
-global.imagen4 = fs.readFileSync("./Assets/menus/Menu3.jpg")
-global.imagen5 = fs.readFileSync("./Assets/menus/img2.jpg")
-global.imagen6 = fs.readFileSync("./Assets/menus/img5.jpg")
-global.imagen7 = fs.readFileSync("./Assets/menus/img6.jpg")
-global.imagen8 = fs.readFileSync("./Assets/menus/img8.jpg")
-global.imagen9 = fs.readFileSync("./Assets/menus/img9.jpg")
-global.imagen10 = fs.readFileSync("./Assets/menus/img11.jpg")
-global.imagen11 = fs.readFileSync("./Assets/menus/img12.jpg")
+global.imagen1 = fs.readFileSync("./lib/source/menus/img1.jpg")
+global.imagen2 = fs.readFileSync("./lib/source/menus/img2.jpg")
 //💌------------------------------------------💌
 
 
 
-global.imag1 = fs.readFileSync("./Assets/prn.png")
-global.imag2 = fs.readFileSync("./Assets/prn1.png")
-global.imag3 = fs.readFileSync("./Assets/prn2.jpg")
+global.imag1 = fs.readFileSync("./lib/source/prn.png")
+global.imag2 = fs.readFileSync("./lib/source/prn1.png")
+global.imag3 = fs.readFileSync("./lib/source/prn2.jpg")
 
 global.pimg = [imag1, imag2, imag3]
 
 
 
 // Randome
-global.princeImg = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8, imagen9, imagen10, imagen11]
+global.princeImg = [imagen1, imagen2]
 //💌------------------------------------------💌
 
 
@@ -161,7 +134,7 @@ global.menuvid = 'https://i.imgur.com/GFAAXqw.mp4'
 global.Princesc = 'https://github.com/PRINCE-GDS/THE-PRINCE-BOT' 
 global.princeyt = 'https://youtube.com/'
 global.Princelog = 'https://i.imgur.com/cUvIv5w.jpeg'
-global.thumb = fs.readFileSync('./Assets/Prince.png')
+global.thumb = fs.readFileSync('./lib/source/Prince.png')
 //💌------------------------------------------💌
 
 
@@ -180,7 +153,24 @@ global.eror = '```404 error```'
 //💌------------------------------------------💌
 
 
+dotenv.config()
 
+const ownervb = process.env.OWNER_NUMBER;
+if (!ownervb){
+   throw new Error("OWNERS env is not set");
+}
+
+const ownerlist = ownervb.split(';');
+
+global.owner = [];
+for (let i = 0; i < ownerlist.length; i += 2) {
+    const owner = [
+        ownerlist[i],            
+        ownerlist[i + 1],         
+        true                        
+    ];
+    global.owner.push(owner);
+}
 
 
 
