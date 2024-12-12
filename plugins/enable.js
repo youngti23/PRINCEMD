@@ -484,9 +484,6 @@ default:
 💬 *\`${usedPrefix}autoread\`*  
    ➤ Enable auto-reard chats
 
-📞 *\`${usedPrefix}anticall\`*  
-   ➤ Enable to rejects calls
-
 👀 *\`${usedPrefix}antiviewonce\`*  
    ➤ Enable viewonce to bot
 
