@@ -20,7 +20,7 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(express.static(path.join(__dirname, 'Assets')));
+app.use(express.static(path.join(__dirname, 'lib/source')));
 
 app.get('/', (req, res) => {
   res.redirect('/prince.html');
