@@ -58,7 +58,20 @@ bot.testbot = isEnable
 break	
 
 
-		  case 'autoread': case 'read':
+case 'anticall':
+        case 'nocall':
+          isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.anticalls = isEnable
+break
+		  
+
+
+		  
+ case 'autoread': case 'read':
 isAll = true
 if (!isROwner) {
 global.dfail('rowner', m, conn)
@@ -69,9 +82,11 @@ global.opts['autoread'] = isEnable
 break
 
 
-		  case 'antiviewonce':
+
+		  
+	case 'antiviewonce':
 	case 'viewonce':
-		  case 'vv':
+	  case 'vv':
 isAll = true
 if (!isROwner) {
 global.dfail('rowner', m, conn)
@@ -417,15 +432,7 @@ break
       break
 
 		  
-      case 'anticall':
-        case 'nocall':
-          isAll = true
-          if (!isOwner) {
-            global.dfail('owner', m, conn)
-            throw false
-          }
-          bot.antiCall = isEnable
-          break
+      
 
 
 		  
