@@ -106,12 +106,12 @@ global.imag1 = fs.readFileSync("./lib/source/prn.png")
 global.imag2 = fs.readFileSync("./lib/source/prn1.png")
 global.imag3 = fs.readFileSync("./lib/source/prn2.jpg")
 
-global.pimg = [imag1, imag2, imag3]
+global.pimg = [imagen1, imagen2]
 
 
 
 // Randome
-global.princeImg = [imagen1, imagen2]
+global.princeImg = [imag1, imag2, imag3]
 //💌------------------------------------------💌
 
 
