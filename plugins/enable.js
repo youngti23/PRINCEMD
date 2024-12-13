@@ -58,6 +58,18 @@ bot.testbot = isEnable
 break	
 
 
+		  case 'statussaver':
+	case 'savestatus':
+		  case 'statussave':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.statussave = isEnable
+break	
+
+
 case 'anticall':
         case 'nocall':
           isAll = true
@@ -480,6 +492,9 @@ default:
 
 💫 *\`${usedPrefix}autoreaction\`*  
    ➤ Enable auto-reactions to chats
+
+🥏 *\`${usedPrefix}statussaver\`*  
+   ➤ Enable auto statussaver to bot
 
 💬 *\`${usedPrefix}autoread\`*  
    ➤ Enable auto-reard chats
