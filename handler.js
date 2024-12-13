@@ -238,8 +238,8 @@ chatbot: false
 /*const Online = !(typeof process.env.AlwaysOnline === 'undefined' || process.env.AlwaysOnline.toLowerCase() === 'false'); 
 if (Online) { conn.sendPresenceUpdate('available', m.chat); } else { conn.sendPresenceUpdate('unavailable', m.chat);}    
 	    */
-let bot = global.db.data.settings[this.user.jid] || {};
-if (bot.alwaysonline) {
+
+if (settings.alwaysonline) {
     conn.sendPresenceUpdate('available', m.chat);
 } else {
     conn.sendPresenceUpdate('unavailable', m.chat);
