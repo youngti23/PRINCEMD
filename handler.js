@@ -663,7 +663,7 @@ export async function participantsUpdate({ id, participants, action }) {
                         "participant": "0@s.whatsapp.net" 
                     };
 
-                    let vn = 'https://qu.ax/cUYg.mp3';
+                    let vn = 'https://github.com/PRINCE-GDS/PRINXE-MD/raw/main/lib/source/mp3/Audio5.mp3';
                     let or = ['texto', 'audio'];
                     let media = or[Math.floor(Math.random() * 2)];
 
