@@ -601,134 +601,83 @@ function pickRandom(list) {
 
 
 
-
 /**
  * Handle groups participants update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
  */
 export async function participantsUpdate({ id, participants, action }) {
-    if (opts['self']) return;
-    if (this.isInit) return;
-    if (global.db.data == null) await loadDatabase();
-    
-    let chat = global.db.data.chats[id] || {};
-    let text = '';
-    
-    switch (action) {
-        case 'add':
-            if (chat.welcome) {
-                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
-                for (let user of participants) {
-                    let pp = thumb;
-                    try {
-                        pp = await this.profilePictureUrl(user, 'image');
-                    } catch (e) {
-                        console.error(e);
-                    }
-                    let apii = await this.getFile(pp);
-                    const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {}; 
-                    const isBotAdminNn = botTt2?.admin === "admin" || false;
+if (opts['self'])
+return
+// if (id in conn.chats) return // First login will spam
+if (this.isInit)
+return
+if (global.db.data == null)
+await loadDatabase()
+let chat = global.db.data.chats[id] || {}
+let text = ''
+switch (action) {
+case 'add':
+if (chat.welcome) {
+let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+for (let user of participants) {
+let pp = thumb;
+try {
+pp = await this.profilePictureUrl(user, 'image')
+} catch (e) {
+} finally {
+let apii = await this.getFile(pp)
+const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {} 
+const isBotAdminNn = botTt2?.admin === "admin" || false
+text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*ᴜɴ ɢʀᴜᴘᴏ ɢᴇɴɪᴀ😸*\n *sɪɴ ʀᴇɢʟᴀ 😉*') :
+(chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+if (chat.antifake && isBotAdminNn && action === 'add') {
+const numerosPermitidos = ["212", "265", "57", "91", "90", "210", "60", "61", "62", "40", "48", "49", "93", "94", "98", "258"] //PUEDES EDITAR LOS USUARIOS QUE SE ELIMINARÁN SI EMPIEZA POR CUALQUIER DE ESOS NÚMEROS	
+if (numerosPermitidos.some(num => user.startsWith(num))) {	
+this.sendMessage(id, { text: `@${user.split("@")[0]} We fake number is not allowed in this group until next time...`, mentions: [user] }, { quoted: null });          
+let responseb = await this.groupParticipantsUpdate(id, [user], 'remove')
+if (responseb[0].status === "404") return      
+return    
+}}    
+let username = this.getName(id)
+let fkontak2 = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }      
+let vn = 'https://github.com/DASTAGHIR/PRINCEMD/raw/main/lib/source/mp3/Audio5.mp3'
+let or = ['texto', 'audio'];
+let media = or[Math.floor(Math.random() * 2)]
+if (media === 'texto')
+this.sendMessage(id, { text: text, 
+contextInfo:{
+forwardingScore: 9999999,
+isForwarded: true, 
+mentionedJid:[user],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"thumbnail": apii.data, 
+"title": [wm, ' ' + wm + '😊', '🌟'].getRandom(),
+"containsAutoReply": true,
+"mediaType": 1, 
+sourceUrl: 'https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11'}}}, { quoted: fkontak2 }) 
+if (media === 'audio')
+this.sendMessage(id, { audio: { url: vn }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": `乂 ＷＥＬＣＯＭＥ 乂`, "body": [wm, ' ' + wm + '😊', '🌟'].getRandom(), "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: 'https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11'}},  ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak2 })
+//this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
+}}}
+			    
+break
+case 'promote':
+case 'daradmin':
+case 'darpoder':
+text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+case 'demote':
+case 'quitarpoder':
+case 'quitaradmin':
+if (!text)
+text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+text = text.replace('@user', '@' + participants[0].split('@')[0])
+if (chat.detect)
+//this.sendMessage(id, { text, mentions: this.parseMention(text) })
+break
+}}
 
-                    text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!')
-                        .replace('@subject', await this.getName(id))
-                        .replace('@desc', groupMetadata.desc?.toString() || 'Welcome to the group!')
-                        .replace('@user', '@' + user.split('@')[0]);
-
-                    if (chat.antifake && isBotAdminNn && action === 'add') {
-                        const numerosPermitidos = ["212", "265", "57", "91", "90", "210", "60", "61", "62", "40", "48", "49", "93", "94", "98", "258"];
-                        if (numerosPermitidos.some(num => user.startsWith(num))) {
-                            await this.sendMessage(id, { 
-                                text: `@${user.split("@")[0]} Fake number is not allowed in this group.`,
-                                mentions: [user] 
-                            });
-                            let responseb = await this.groupParticipantsUpdate(id, [user], 'remove');
-                            if (responseb[0].status === "404") return;
-                            return;
-                        }
-                    }
-
-                    let username = this.getName(id);
-                    let fkontak2 = { 
-                        "key": { 
-                            "participants": "0@s.whatsapp.net", 
-                            "remoteJid": "status@broadcast", 
-                            "fromMe": false, 
-                            "id": "Halo" 
-                        }, 
-                        "message": { 
-                            "contactMessage": { 
-                                "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` 
-                            }
-                        }, 
-                        "participant": "0@s.whatsapp.net" 
-                    };
-
-                    let vn = 'https://github.com/PRINCE-GDS/PRINXE-MD/raw/main/lib/source/mp3/Audio5.mp3';
-                    let or = ['texto', 'audio'];
-                    let media = or[Math.floor(Math.random() * 2)];
-
-                    if (media === 'texto') {
-                        await this.sendMessage(id, { 
-                            text: text,
-                            contextInfo: {
-                                forwardingScore: 9999999,
-                                isForwarded: true,
-                                mentionedJid: [user],
-                                "externalAdReply": {
-                                    "showAdAttribution": true,
-                                    "renderLargerThumbnail": true,
-                                    "thumbnail": apii.data,
-                                    "title": [wm, ' ' + wm + '😊', '🌟'].getRandom(),
-                                    "containsAutoReply": true,
-                                    "mediaType": 1,
-                                    "sourceUrl": 'https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11'
-                                }
-                            } 
-                        }, { quoted: fkontak2 });
-                    } else if (media === 'audio') {
-                        await this.sendMessage(id, { 
-                            audio: { url: vn }, 
-                            contextInfo: { 
-                                mentionedJid: [user], 
-                                "externalAdReply": { 
-                                    "thumbnail": apii.data, 
-                                    "title": `乂 ＷＥＬＣＯＭＥ 乂`, 
-                                    "body": [wm, ' ' + wm + '😊', '🌟'].getRandom(), 
-                                    "previewType": "PHOTO", 
-                                    "thumbnailUrl": null, 
-                                    "showAdAttribution": true,  
-                                    sourceUrl: 'https://whatsapp.com/channel/0029VaKNbWkKbYMLb61S1v11'
-                                }
-                            },
-                            ptt: true,
-                            mimetype: 'audio/mpeg',
-                            fileName: `error.mp3` 
-                        }, { quoted: fkontak2 });
-                    }
-                }
-            }
-            break;
-
-        case 'promote':
-        case 'daradmin':
-        case 'darpoder':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```');
-            break;
-
-        case 'demote':
-        case 'quitarpoder':
-        case 'quitaradmin':
-            text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```');
-            break;
-
-        default:
-            break;
-    }
-
-    if (chat.detect && text) {
-        await this.sendMessage(id, { text, mentions: this.parseMention(text) });
-    }
-}
 
 
 
