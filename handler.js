@@ -123,6 +123,7 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {}
             if (chat) {
 if (!("antiDelete" in chat)) chat.antiDelete = true
+if (!("antdeletelinks" in chat)) chat.antdeletelinks = true 
 if (!("antiSticker" in chat)) chat.antiSticker = false
 if (!("antiToxic" in chat)) chat.antiToxic = false
 if (!('antiver' in chat)) chat.antiver = false 
@@ -161,6 +162,7 @@ if (!isNumber(chat.expired)) chat.expired = 0
 } else
 		    
 global.db.data.chats[m.chat] = {
+antdeletelinks: true,
 antiDelete: true,
 antiSticker: false,
 antiToxic: false,
