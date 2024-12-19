@@ -233,7 +233,9 @@ break
       chat.viewStory = isEnable
       break
 
-		  
+//🤍♥️🤍♥️🤍♥️🤍TEST CHAT		  
+
+
     case 'testf':
     case 'testfeature':
     case 'tst':
@@ -244,6 +246,19 @@ break
         }
       }
       chat.testf = isEnable
+      break
+
+
+case 'antideletelinks':
+    case 'deletelinks':
+    case 'linksdelete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antdeletelinks = isEnable
       break
 		  
 
@@ -554,6 +569,9 @@ default:
 🛡️ *\`${usedPrefix + command} antispam\`*  
    ➤ Detect and block spammers
 
+📎 *\`${usedPrefix + command} antideletelinks\`*  
+   ➤ Delete every links in groups
+
 🚷 *\`${usedPrefix + command} nocmds\`*  
    ➤ Remove users who misuse commands
 
@@ -621,6 +639,6 @@ m.reply(`
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['config']
-handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01])$/i
+handler.command = /^(setting|settings|(en|dis)able|(turn)?o(n|ff)|[01])$/i
 
 export default handler
