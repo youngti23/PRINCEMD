@@ -807,6 +807,7 @@ export async function groupsUpdate(groupsUpdate) {
 Delete Chat
  */
 
+
 export async function deleteUpdate(message) {
     try {
         if (typeof process.env.antidelete === 'undefined' || process.env.antidelete.toLowerCase() === 'false') return;
@@ -819,13 +820,9 @@ export async function deleteUpdate(message) {
 
         await this.reply(
             conn.user.id, 
-            `
-            🚨 *Message Deleted Alert!* 🚨
-            
+            `🚨 *Message Deleted Alert!* 🚨
             📲 *Number:* @${participant.split`@`[0]}  
-            ✋ *Message Deleted Below:* 👇  
-
-            📌 Stay vigilant! 😎
+            ✋ *Deleted Below:* 👇  
             `.trim(), 
             msg, 
             { mentions: [participant] }
@@ -835,7 +832,6 @@ export async function deleteUpdate(message) {
         console.error(e);
     }
 }
-
 
 /*
  Polling Update 
