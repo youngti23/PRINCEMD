@@ -24,7 +24,7 @@
     "OWNER_NUMBER": {
       "description": "put your Number and name for Owner",
       "required": true,
-      "value": "923092668108;❣️DASTAGEER"
+      "value": "923092668108,❣️DASTAGEER"
     },
     "MODE": {
       "description": "choose bot mode public or private",
@@ -40,7 +40,7 @@
       "description": "bot will forward deleted messages if you make it true",
       "required": false,
       "value": "false"
-       },
+    },
     "DATABASE_URL": {
       "description": "put mongodb or postgres or princedb database url for bots better performance",
       "required": false,
@@ -75,6 +75,11 @@
       "description": "reject calls",
       "required": false,
       "value": "true"
+    },
+    "ANTIFAKE_USERS": {
+      "description": "add antifake numbers bot wont let them to join group for all numbers 1,2,3,4,5,6,7,8,9 like this",
+      "required": false,
+      "value": "1,212,63,44"
     },
     "PACK_NAME": {
       "description": "put your stickers pack name",
