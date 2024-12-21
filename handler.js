@@ -25,7 +25,7 @@ const delay = ms =>
  * Handle messages upsert
  * @param {import("@whiskeysockets/baileys").BaileysEventMap<unknown>["messages.upsert"]} groupsUpdate
  */
-const { getAggregateVotesInPollMessage, makeInMemoryStore } = await (
+const { getAggregateVotesInPollMessage, makeInMemoryStore, proto } = await (
   await import('@whiskeysockets/baileys')
 ).default
 const store = makeInMemoryStore({
@@ -147,6 +147,7 @@ if (!("isBanned" in chat)) chat.isBanned = false
 if (!("nsfw" in chat)) chat.nsfw = false
 if (!("sBye" in chat)) chat.sBye = ""
 if (!("sDemote" in chat)) chat.sDemote = ""
+if (!('sCondition' in chat)) chat.sCondition = JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}])
 if (!("simi" in chat)) chat.simi = false
 if (!("sPromote" in chat)) chat.sPromote = ""
 if (!("sWelcome" in chat)) chat.sWelcome = ""
@@ -162,8 +163,8 @@ if (!isNumber(chat.expired)) chat.expired = 0
 } else
 		    
 global.db.data.chats[m.chat] = {
-antdeletelinks: true,
 antiDelete: true,
+antdeletelinks: false, 
 antiSticker: false,
 antiToxic: false,
 antiver: true,
@@ -189,6 +190,7 @@ isBanned: false,
 nsfw: false, 
 sBye: "",
 sDemote: "",
+sCondition: JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}]), 
 simi: false,
 sPromote: "",
 sticker: false,
@@ -279,8 +281,13 @@ if (m.chat === specificGroup && m.sender !== allowedSender) {
           return;
 
         
-        if (m.isBaileys)
-            return
+      /*  if (m.isBaileys)
+            return */
+        
+        if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
+              return;
+        }  
+	    
         m.exp += Math.ceil(Math.random() * 10)
 
         let usedPrefix
