@@ -21,8 +21,7 @@ global.confirmCode = ""
 //💌------------------------------------------💌
 
 
-//Change to false to use the Bot from the same number as the Bot.
-global.isBaileysFail = false
+
 
 
 //💌global.pairingNumber = "" //put your bot number here💌
@@ -121,6 +120,9 @@ global.princeImg = [imagen1, imagen2]
 
 
 // Moderator 
+//Change to false to use the Bot from the same number as the Bot.
+global.isBaileysFail = false
+
 global.developer = 'https://wa.me/message/DCAK67ON3XVOG1' //contact
 //💌------------------------------------------💌
 
@@ -161,10 +163,10 @@ dotenv.config()
 
 const ownervb = process.env.OWNER_NUMBER;
 if (!ownervb){
-   throw new Error("OWNERS env is not set");
+   throw new Error("OWNER_NUMBER var env is not set please set it e.g 923092668108,Prince");
 }
 
-const ownerlist = ownervb.split(';');
+const ownerlist = ownervb.split(',');
 
 global.owner = [];
 for (let i = 0; i < ownerlist.length; i += 2) {
