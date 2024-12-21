@@ -622,7 +622,7 @@ const isBotAdminNn = botTt2?.admin === "admin" || false
 text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'A genius group😁\nwithout rules 😉') :
 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
 if (chat.antifake && isBotAdminNn && action === 'add') {
-const numerosPermitidos = process.env.ANTIFAKE_USERS	
+const numerosPermitidos = process.env.ANTIFAKE_USERS.split(',');	
 if (numerosPermitidos.some(num => user.startsWith(num))) {	
 this.sendMessage(id, { text: `@${user.split("@")[0]} Fake number is not allowed in this group until the antifake feature is enabled...`, mentions: [user] }, { quoted: null });          
 let responseb = await this.groupParticipantsUpdate(id, [user], 'remove')
