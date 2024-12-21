@@ -92,7 +92,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     } else if (chat.detect && m.messageStubType === 172 && m.messageStubParameters.length > 0) {
         const rawUser = m.messageStubParameters[0];
         const users = rawUser.split('@')[0];
-        const forbiddenPrefixes = process.env.ANTIFAKE_USERS
+        const forbiddenPrefixes = process.env.ANTIFAKE_USERS.split(',');
         const usersWithPrefix = users.startsWith('+') ? users : `+${users}`;
 
         if (chat.antifake) {
