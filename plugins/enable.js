@@ -249,6 +249,19 @@ break
       break
 
 
+		  case 'antifake':
+    case 'fake':
+    case 'blockusers':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antifake = isEnable
+      break
+
+
 case 'antideletelinks':
     case 'deletelinks':
     case 'linksdelete':
