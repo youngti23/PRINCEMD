@@ -21,6 +21,10 @@ global.confirmCode = ""
 //💌------------------------------------------💌
 
 
+//Change to false to use the Bot from the same number as the Bot.
+global.isBaileysFail = false
+
+
 //💌global.pairingNumber = "" //put your bot number here💌
 global.mods = ['923092668108'] 
 global.prems = ['923092668108']
