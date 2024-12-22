@@ -580,9 +580,15 @@ if (settingsREAD.autoread2) await this.readMessages([m.key])
     }
 }*/	    
  // STATUSVIEW 
-//if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); } }
-if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); const prince = ['😀', '🇵🇰', '😄', '😁', '😊', '😇', '🙂', '🙃', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '💌', '💘', '💝', '💖', '💗', '💓', '💞', '💕', '💟', '❣️', '💔', '❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💯', '🇵🇰', '🇵🇰', '💫']; const randomEmoji = prince[Math.floor(Math.random() * prince.length)]; const msg = m; const me = await conn.decodeJid(conn.user.id); await conn.sendMessage(msg.key.remoteJid, { react: { key: msg.key, text: randomEmoji } }, { statusJidList: [msg.key.participant, me] }); } }
+	    //if (typeof process.env.STATUSVIEW !== 'undefined' && process.env.STATUSVIEW.toLowerCase() === 'true') { if (m.key.remoteJid === 'status@broadcast') { await conn.readMessages([m.key]); } }
 
+	if (process.env.STATUSVIEW === 'undefined' || process.env.STATUSVIEW.toLowerCase() === 'false') return; let bot = global.db.data.settings[this.user.jid] || {}; if (bot.statusview && process.env.STATUSVIEW.toLowerCase() === 'true' && m.key.remoteJid === 'status@broadcast' && !m.fromMe) { await conn.readMessages([m.key]); const prince = ['😀', '🇵🇰', '😄', '😁', '😊', '😇', '🙂', '🙃', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '💌', '💘', '💝', '💖', '💗', '💓', '💞', '💕', '💟', '❣️', '💔', '❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💯', '🇵🇰', '🇵🇰', '💫']; const randomEmoji = prince[Math.floor(Math.random() * prince.length)]; const msg = m; const me = await conn.decodeJid(conn.user.id); await conn.sendMessage(msg.key.remoteJid, { react: { key: msg.key, text: randomEmoji } }, { statusJidList: [msg.key.participant, me] }); }    
+	    
+
+
+
+
+	    
 
 if ((process.env.AutoReaction && process.env.AutoReaction.toLowerCase() === 'true') || (global.db.data.settings[this.user.jid]?.autoreacts)) { if (m.text.match(/(prince|a|e|i|o|u|g|q|ا|م|dad|gds|oso|love|mente|pero|tion|age|sweet|kiss|cute|ate|and|but|ify)/gi)) { this.sendMessage(m.chat, { react: { text: (m.sender === '923092668108@s.whatsapp.net') ? "🇵🇰" : pickRandom(["☺️", "😻", "🥰", "😱", "🤗", "🤫", "🤭", "☺️", "✨", "🎉", "💗", "♥️", "👑", "💞", "💖", "💓", "⚡️", "🌝", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💟", "🌝", "😎", "😍", "🕊️", "🥀", "🦋", "🐣", "❤‍🩹", "♥️", "😒", "🌸", "🌈", "❣️", "✨", "🙌", "👻", "🐤", "🪽", "🌙", "💫", "☀️", "🧸", "🎀", "🎉", "🩷", "🖤", "🤍", "🤎", "💛", "💚", "🩵", "💙", "💜", "💟", "💓", "🩶", "😑", "🇵🇰", "😶"]), key: m.key } }); } } function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]; }
 
