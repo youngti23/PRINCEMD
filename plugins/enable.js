@@ -57,6 +57,17 @@ throw false
 bot.testbot = isEnable
 break	
 
+		  case 'sw':
+		  case 'sview':
+	case 'statusview':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.statusview = isEnable
+break	
+
 
 		  case 'alwaysonline':
 	case 'online':
@@ -535,6 +546,9 @@ default:
 🥏 *\`${usedPrefix + command} statussaver\`*  
    ➤ Enable auto statussaver to bot
 
+🚀 *\`${usedPrefix + command} statusview\`*  
+   ➤ Enable auto statusview to bot
+
 💻 *\`${usedPrefix + command} alwaysonline\`*  
    ➤ Enable alwaysonline to bot
 
@@ -572,6 +586,9 @@ default:
 
 🖼️ *\`${usedPrefix + command} autosticker\`*  
    ➤ Automatically create stickers from images and videos
+
+🔢 *\`${usedPrefix + command} antifake\`*  
+   ➤ Enable antifake to group
 
 🔍 *\`${usedPrefix + command} detect\`*  
    ➤ Feature coming soon…
