@@ -147,7 +147,6 @@ if (!("isBanned" in chat)) chat.isBanned = false
 if (!("nsfw" in chat)) chat.nsfw = false
 if (!("sBye" in chat)) chat.sBye = ""
 if (!("sDemote" in chat)) chat.sDemote = ""
-if (!('sCondition' in chat)) chat.sCondition = JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}])
 if (!("simi" in chat)) chat.simi = false
 if (!("sPromote" in chat)) chat.sPromote = ""
 if (!("sWelcome" in chat)) chat.sWelcome = ""
@@ -190,7 +189,6 @@ isBanned: false,
 nsfw: false, 
 sBye: "",
 sDemote: "",
-sCondition: JSON.stringify([{ grupo: { usuario: [], condicion: [], admin: '' }, prefijos: []}]), 
 simi: false,
 sPromote: "",
 sticker: false,
@@ -281,12 +279,8 @@ if (m.chat === specificGroup && m.sender !== allowedSender) {
           return;
 
         
-      /*  if (m.isBaileys)
-            return */
-        
-        if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
-              return;
-        }  
+        if (m.isBaileys)
+            return 
 	    
         m.exp += Math.ceil(Math.random() * 10)
 
