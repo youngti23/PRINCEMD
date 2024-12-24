@@ -24,7 +24,7 @@
     "OWNER_NUMBER": {
       "description": "put your Number and name for Owner",
       "required": true,
-      "value": "923092668108,❣️DASTAGEER"
+      "value": "9230926680000,❣️PRINCE THE DEVELOPER"
     },
     "MODE": {
       "description": "choose bot mode public or private",
@@ -61,11 +61,6 @@
       "required": false,
       "value": "false"
     },
-    "STATUS_REPLY": {
-      "description": "Status reply true false to on off",
-      "required": false,
-      "value": "false"
-    },
     "STATUS_MSG": {
       "description": "Status reply msg",
       "required": false,
@@ -89,7 +84,7 @@
     "DL_MSG": {
       "description": "Video downloader caption",
       "required": true,
-      "value": "_📥*DOWNLOADED SUCCESSFULLY*✅_"
+      "value": "_*📥DOWNLOADED SUCCESSFULLY✅*_"
     } 
   },
   "buildpacks": [
