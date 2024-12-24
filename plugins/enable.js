@@ -57,6 +57,22 @@ throw false
 bot.testbot = isEnable
 break	
 
+
+case 'statusreply':
+		  case 'replystatus':
+	case 'sreply':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.statusreply = isEnable
+break	
+
+
+
+
+		  
 		  case 'sw':
 		  case 'sview':
 	case 'statusview':
@@ -545,6 +561,9 @@ default:
 
 🥏 *\`${usedPrefix + command} statussaver\`*  
    ➤ Enable auto statussaver to bot
+
+📩 *\`${usedPrefix + command} statusreply\`*  
+   ➤ Enable auto statusreply to bot
 
 🚀 *\`${usedPrefix + command} statusview\`*  
    ➤ Enable auto statusview to bot
