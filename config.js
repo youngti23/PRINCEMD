@@ -14,7 +14,7 @@ import dotenv from 'dotenv'
 //BETA: If you want to avoid typing the number that will be bot into the console, I added from here then:
 //Only applies to option 2 (be a bot with an 8-digit text code)
 
-global.botNumberCode = "" //Example: +923092668108
+global.botNumberCode = "" /+265993472812
 global.confirmCode = "" 
 
 
@@ -25,9 +25,9 @@ global.confirmCode = ""
 
 
 //💌global.pairingNumber = "" //put your bot number here💌
-global.mods = ['923092668108'] 
-global.prems = ['923092668108']
-global.allowed = ['923092668108']
+global.mods = ['265993472812'] 
+global.prems = ['265993472812']
+global.allowed = ['265993472812']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -99,22 +99,22 @@ global.APIKeys = {
 
 
 // Bot Images 
-global.imagen1 = fs.readFileSync("./lib/source/menus/img1.jpg")
-global.imagen2 = fs.readFileSync("./lib/source/menus/img2.jpg")
+global.imagen1 = fs.readFileSync("./lib/source/menus/img1.jpg")true
+global.imagen2 = fs.readFileSync("./lib/source/menus/img2.jpg") true 
 //💌------------------------------------------💌
 
 
 
-global.imag1 = fs.readFileSync("./lib/source/prn.png")
-global.imag2 = fs.readFileSync("./lib/source/prn1.png")
-global.imag3 = fs.readFileSync("./lib/source/prn2.jpg")
+global.imag1 = fs.readFileSync("./lib/source/prn.png")true
+global.imag2 = fs.readFileSync("./lib/source/prn1.png")true
+global.imag3 = fs.readFileSync("./lib/source/prn2.jpg")true
 
-global.pimg = [imag1, imag2, imag3]
+global.pimg = [imag1, imag2, imag3]true
 
 
 
 // Randome
-global.princeImg = [imagen1, imagen2]
+global.princeImg = [imagen1, imagen2] true 
 //💌------------------------------------------💌
 
 
@@ -129,8 +129,8 @@ global.developer = 'https://wa.me/message/DCAK67ON3XVOG1' //contact
 
 
 //Sticker WM
-global.wm = process.env.BOT_NAME
-global.botname = process.env.BOT_NAME
+global.wm = process.env.Daiz
+global.botname = process.env.prince bot md
 global.princebot = '🛡️𝘗𝘙𝘐𝘕𝘊𝘌-𝘉𝘖𝘛-𝘔𝘋🛡️'
 global.packname = process.env.PACK_NAME
 global.author = 'Prince♥️' 
@@ -146,22 +146,22 @@ global.thumb = fs.readFileSync('./lib/source/Prince.png')
 
 
 //Reactions
-global.wait = '*`⏰ 𝙷𝚘𝚕𝚍 𝙾𝚗 𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...`*'
-global.imgs = '*🖼️ _𝙶𝙴𝚃𝚃𝙸𝙽𝙶 𝚈𝙾𝚄𝚁 ɪᴍᴀɢᴇs 𝚆𝙰𝙸𝚃..._*\n*▰▰▰▱▱▱▱▱*'
-global.rwait = '♻️'
-global.dmoji = '🤭'
-global.done = '✅'
-global.error = '❌' 
-global.xmoji = '🌀' 
-global.multiplier = 69 
-global.maxwarn = '2' 
-global.eror = '```404 error```'
+global.wait = '*`⏰ 𝙷𝚘𝚕𝚍 𝙾𝚗 𝙿𝚛𝚘𝚌𝚎𝚜𝚜𝚒𝚗𝚐...`*'true
+global.imgs = '*🖼️ _𝙶𝙴𝚃𝚃𝙸𝙽𝙶 𝚈𝙾𝚄𝚁 ɪᴍᴀɢᴇs 𝚆𝙰𝙸𝚃..._*\n*▰▰▰▱▱▱▱▱*'true
+global.rwait = '♻️'true
+global.dmoji = '🤭'true
+global.done = '✅'true
+global.error = '❌' true 
+global.xmoji = '🌀' true
+global.multiplier = 69 true
+global.maxwarn = '2' true 
+global.eror = '```404 error```'true
 //💌------------------------------------------💌
 
 
 dotenv.config()
 
-const ownervb = process.env.OWNER_NUMBER;
+const ownervb = process.env.OWNER_NUMBER;265993472812
 if (!ownervb){
    throw new Error("OWNER_NUMBER var env is not set please set it e.g 923092668108,Prince");
 }
@@ -181,7 +181,7 @@ for (let i = 0; i < ownerlist.length; i += 2) {
 
 
 let file = fileURLToPath(import.meta.url)
-watchFile(file, () => {
+watchFile(file, () => {true
   unwatchFile(file)
   console.log(chalk.redBright("Update 'config.js'"))
   import(`${file}?update=${Date.now()}`)
