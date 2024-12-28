@@ -16,57 +16,57 @@
       "required": true,
       "value": ""
     },
-    "BOT_NAME": {
+    "BOT_NAME": {prince md 
       "description": "put your BOT a name",
       "required": true,
       "value": "PRINCE-MD"
     },
-    "OWNER_NUMBER": {
+    "OWNER_NUMBER": {265993472812
       "description": "put your Number and name for Owner",
       "required": true,
       "value": "9230926680000,❣️PRINCE THE DEVELOPER"
     },
-    "MODE": {
+    "MODE": {public 
       "description": "choose bot mode public or private",
       "required": true,
       "value": "public"
     },
-    "PREFIX": {
+    "PREFIX": {.
       "description": "put any one symbol here leave it Blank if you want to use multiple prefix",
       "required": false,
       "value": "" 
     },
-    "antidelete": {
+    "antidelete": {true
       "description": "bot will forward deleted messages if you make it true",
       "required": false,
-      "value": "false"
+      "value": "true"
     },
     "DATABASE_URL": {
       "description": "put mongodb or postgres or princedb database url for bots better performance",
       "required": false,
       "value": ""
     },
-    "ANTI_LINK": {
+    "ANTI_LINK": {true
       "description": "it will dlt links and kick user",
       "required": false,
-      "value": "false"
+      "value": "true"
     },
-    "AutoReaction": {
+    "AutoReaction": {true
       "description": "make it true to react on chats",
       "required": false,
-      "value": "false"
+      "value": "true"
     },
-    "STATUSVIEW": {
+    "STATUSVIEW": {true
       "description": "make it true to auto view status and likes",
       "required": false,
-      "value": "false"
+      "value": "true"
     },
-    "STATUS_MSG": {
+    "STATUS_MSG": {true
       "description": "Status reply msg",
       "required": false,
       "value": "Your Status has been seen by Prince bot"
     },
-    "REJECTSCALLS": {
+    "REJECTSCALLS": {false 
       "description": "reject calls",
       "required": false,
       "value": "true"
@@ -76,12 +76,12 @@
       "required": false,
       "value": "1,212,63,44"
     },
-    "PACK_NAME": {
+    "PACK_NAME": {princebot
       "description": "put your stickers pack name",
       "required": false,
       "value": "Princebot🎗️❣️"
     },
-    "DL_MSG": {
+    "DL_MSG": {true
       "description": "Video downloader caption",
       "required": true,
       "value": "_*📥DOWNLOADED SUCCESSFULLY✅*_"
